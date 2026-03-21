@@ -1,0 +1,17 @@
+# Management scripts
+*.ps1
+*.py
+
+# System / Temporary files
+.DS_Store
+Thumbs.db
+serve.ps1
+import_shops.ps1
+import_shops.py
+process_shops.py
+fast_recovery.ps1
+import_shops_robust.ps1
+
+# Optional: You might want to keep tokyo_shops_full.json for data reference,
+# but if you only want the map to work, tokyo_shops_full.js is the main one.
+# For now, let's keep the data files.
