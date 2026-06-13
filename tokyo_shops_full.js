@@ -307,7 +307,7 @@ const FULL_TOKYO_SHOPS = [
         "lng":  139.7264,
         "hours":  "11:00-21:00",
         "payment":  "VISA/MC/JCB/AMEX/Suica/iD/PayPay",
-        "website":  "https://cruzburgers.jp/"
+        "website":  "https://cruzburgers.eeat.jp/"
     },
     {
         "id":  32,
@@ -687,7 +687,7 @@ const FULL_TOKYO_SHOPS = [
         "lng":  139.728961,
         "hours":  "水・木・金・日・祝日 11:30 - 16:00 L.O. 15:30 土 11:30 - 16:00 L.O. 料理15:30 月・火・祝後日 定休日 月曜日が祝日の場合は水曜日が定休日",
         "payment":  "現金・QR決済",
-        "website":  "https://tabelog.com/tokyo/A1322/A132201/13220306/"
+        "website":  "https://www.instagram.com/amberplace2020/"
     },
     {
         "id":  5015,
@@ -917,7 +917,7 @@ const FULL_TOKYO_SHOPS = [
         "lng":  139.719107,
         "hours":  "月・火・水・木・金・土・日・祝日・祝前日・祝後日 11:00 - 22:00 L.O. 21:30",
         "payment":  "現金・クレジットカード・電子マネー・QR決済",
-        "website":  "https://tabelog.com/tokyo/A1305/A130501/13315198/"
+        "website":  "https://brisk-stand.com/"
     },
     {
         "id":  5046,
@@ -2307,7 +2307,7 @@ const FULL_TOKYO_SHOPS = [
         "lng":  139.713855,
         "hours":  "月・火・水・木・金・祝前日・祝後日 11:00 - 15:00 L.O. 14:45 土・日・祝日 11:00 - 16:00 L.O. 15:45 売切れなどの臨時休業は公式Instagram参照ください",
         "payment":  "現金・クレジットカード・電子マネー・QR決済",
-        "website":  "https://tabelog.com/tokyo/A1305/A130501/13308406/"
+        "website":  "https://worldburger.jp/"
     },
     {
         "id":  5248,
@@ -3007,7 +3007,7 @@ const FULL_TOKYO_SHOPS = [
         "lng":  139.707471,
         "hours":  "11:30 - 21:30 L.O. 21:00 ■ 営業時間店頭テイクアウト・デリバリーサービスは規定の営業時間までご利用いただけます。(Uber、出前館、Wolt)■ 定休日無し",
         "payment":  "現金・クレジットカード・電子マネー・QR決済",
-        "website":  "https://tabelog.com/tokyo/A1305/A130501/13284539/"
+        "website":  "https://shogun-burger.com/"
     },
     {
         "id":  5355,
@@ -5880,16 +5880,6 @@ const FULL_TOKYO_SHOPS = [
         "website":  "要確認"
     },
     {
-        "id":  5728,
-        "name":  "EAST VILLAGE",
-        "address":  "東京都豊島区東池袋1-13-1",
-        "lat":  35.68944,
-        "lng":  139.69167,
-        "hours":  "11:30-22:00",
-        "payment":  "現金のみ",
-        "website":  "要確認"
-    },
-    {
         "id":  5729,
         "name":  "KUA`AINA サンシャインシティ店",
         "address":  "東京都豊島区東池袋3-1-1",
@@ -5900,36 +5890,6 @@ const FULL_TOKYO_SHOPS = [
         "website":  "https://www.kua-aina.com/"
     },
     {
-        "id":  5731,
-        "name":  "BIG ISLAND",
-        "address":  "東京都豊島区西池袋",
-        "lat":  35.68944,
-        "lng":  139.69167,
-        "hours":  "11:30-22:00",
-        "payment":  "クレカ可",
-        "website":  "要確認"
-    },
-    {
-        "id":  5732,
-        "name":  "PLUG IN PIT",
-        "address":  "東京都豊島区西池袋",
-        "lat":  35.68944,
-        "lng":  139.69167,
-        "hours":  "11:30-21:00",
-        "payment":  "クレカ可",
-        "website":  "要確認"
-    },
-    {
-        "id":  5734,
-        "name":  "Burger\u0027s Base 目白",
-        "address":  "東京都豊島区目白",
-        "lat":  35.68944,
-        "lng":  139.69167,
-        "hours":  "11:30-21:00",
-        "payment":  "クレカ可",
-        "website":  "要確認"
-    },
-    {
         "id":  5735,
         "name":  "TGI Fridays 池袋店",
         "address":  "東京都豊島区東池袋1-21-13",
@@ -5937,7 +5897,7 @@ const FULL_TOKYO_SHOPS = [
         "lng":  139.69167,
         "hours":  "11:30-23:00",
         "payment":  "クレカ可",
-        "website":  "要確認"
+        "website":  "https://www.tgifridays.co.jp/find-us/ikebukuro/"
     },
     {
         "id":  5736,
@@ -5947,7 +5907,7 @@ const FULL_TOKYO_SHOPS = [
         "lng":  139.69167,
         "hours":  "12:00-22:00",
         "payment":  "クレカ可",
-        "website":  "要確認"
+        "website":  "https://tabelog.com/tokyo/A1305/A130501/13017028/"
     },
     {
         "id":  5737,
@@ -5967,17 +5927,7 @@ const FULL_TOKYO_SHOPS = [
         "lng":  139.69167,
         "hours":  "11:30-22:00",
         "payment":  "クレカ可",
-        "website":  "要確認"
-    },
-    {
-        "id":  5739,
-        "name":  "BURGER \u0026 BEER COLOR 池袋",
-        "address":  "東京都豊島区東池袋",
-        "lat":  35.68944,
-        "lng":  139.69167,
-        "hours":  "11:30-23:00",
-        "payment":  "クレカ可",
-        "website":  "要確認"
+        "website":  "https://ikebukuro.alohatable.com/"
     },
     {
         "id":  5740,
@@ -7178,5 +7128,15 @@ const FULL_TOKYO_SHOPS = [
         "payment":  "VISA/MC/JCB/AMEX/Suica/PayPay",
         "website":  "https://mikkeller.jp/",
         "id":  5942
+    },
+    {
+        "id":  10001,
+        "name":  "CHILLAX BURGERS \u0026 WINE",
+        "address":  "東京都豊島区東池袋1-23-5",
+        "lat":  35.729186,
+        "lng":  139.7155749,
+        "hours":  "11:00-15:00/17:00-21:00",
+        "payment":  "現金/クレジットカード/電子マネー/QR決済",
+        "website":  "https://twitter.com/CHILLAXBURGER"
     }
 ];
