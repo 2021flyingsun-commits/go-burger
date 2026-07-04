@@ -8,6 +8,8 @@
     
     <!-- Icons -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#dc2626">
     <link rel="icon" type="image/png" href="apple-touch-icon.png">
 
     <!-- Google AdSense -->
@@ -17,6 +19,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -85,6 +88,33 @@
             border-radius: 12px;
             padding: 0;
             overflow: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark mode overrides for Leaflet popups */
+        html.dark .leaflet-popup-content-wrapper,
+        html.dark .leaflet-popup-tip {
+            background-color: #1f2937; /* Tailwind gray-800 */
+            color: #f3f4f6; /* Tailwind gray-100 */
+        }
+        
+        /* Tooltip background */
+        html.dark .leaflet-tooltip {
+            background-color: #1f2937;
+            color: #f3f4f6;
+            border-color: #374151;
+        }
+        html.dark .leaflet-tooltip-top:before {
+            border-top-color: #1f2937;
+        }
+        html.dark .leaflet-tooltip-bottom:before {
+            border-bottom-color: #1f2937;
+        }
+        html.dark .leaflet-tooltip-left:before {
+            border-left-color: #1f2937;
+        }
+        html.dark .leaflet-tooltip-right:before {
+            border-right-color: #1f2937;
         }
 
         .leaflet-popup-content {
@@ -103,6 +133,17 @@
             }
         }
     </style>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('SW registered: ', registration);
+                }).catch(registrationError => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+            });
+        }
+    </script>
 </head>
 
 <body class="bg-slate-50 text-slate-900 h-screen w-screen overflow-hidden select-none">
@@ -333,8 +374,9 @@
             return { title: 'バーガー初心者', emoji: '🐣', color: 'from-gray-400 to-gray-500', next: 5, need: 5 - count };
         }
 
-        function MapView({ selectedPrefecture, onBack, visitedShops, toggleVisited }) {
+        function MapView({ selectedPrefecture, onBack, visitedShops, toggleVisited, darkMode, setDarkMode }) {
             const mapRef = useRef(null);
+            const tileLayerRef = useRef(null);
             const [localMap, setLocalMap] = useState(null);
             const [searchQuery, setSearchQuery] = useState("");
             const [currentLocationLayer, setCurrentLocationLayer] = useState(null);
@@ -419,8 +461,11 @@
 
                 const map = L.map(mapRef.current, { zoomControl: false }).setView([selectedPrefecture.lat, selectedPrefecture.lng], 12);
 
-                // CARTO Voyager - Clean, reliable, and better contrast for markers
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                // CARTO Voyager / Dark Matter depending on dark mode
+                const tileUrl = darkMode 
+                    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+                    : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+                tileLayerRef.current = L.tileLayer(tileUrl, {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
                     subdomains: 'abcd',
                     maxZoom: 20
@@ -434,6 +479,16 @@
                     map.remove();
                 };
             }, [selectedPrefecture]);
+
+            // Update Map tile when dark mode changes without re-rendering everything
+            useEffect(() => {
+                if (tileLayerRef.current) {
+                    const tileUrl = darkMode 
+                        ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+                        : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+                    tileLayerRef.current.setUrl(tileUrl);
+                }
+            }, [darkMode]);
 
             // Initialize AdSense
             useEffect(() => {
@@ -466,6 +521,8 @@
                     if (visitFilter === 'favorites' && !isFav) return false;
                     if (showOpenNow && !isShopOpenNow(shop.hours)) return false;
                     if (showCashlessOnly && !isCashless(shop.payment)) return false;
+                    
+
 
                     if (walkingOrigin && walkingTime) {
                         const dist = haversineDistance(walkingOrigin.lat, walkingOrigin.lng, shop.lat, shop.lng);
@@ -523,10 +580,10 @@
                                 <label for="visit-check-${shop.id}" class="text-sm font-bold text-brand-800 cursor-pointer select-none">行ったことがある！</label>
                             </div>
                             ${localVisited ? `
-                            <div class="bg-yellow-50 rounded-lg p-2 border border-yellow-200">
-                                <p class="text-xs font-bold text-yellow-800 mb-1">⭐ 自分の評価</p>
+                            <div class="bg-yellow-50 dark:bg-yellow-900/30 rounded-lg p-2 border border-yellow-200 dark:border-yellow-700">
+                                <p class="text-xs font-bold text-yellow-800 dark:text-yellow-200 mb-1">⭐ 自分の評価</p>
                                 <div class="flex gap-1 mb-2" id="stars-${shop.id}">${stars}</div>
-                                <textarea id="memo-${shop.id}" rows="2" placeholder="メモ（感想・次に頼むもの等）" class="w-full text-xs p-1 border border-yellow-300 rounded resize-none focus:outline-none focus:border-yellow-500">${review.memo}</textarea>
+                                <textarea id="memo-${shop.id}" rows="2" placeholder="メモ（感想・次に頼むもの等）" class="w-full text-xs p-1 border border-yellow-300 dark:border-yellow-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded resize-none focus:outline-none focus:border-yellow-500">${review.memo}</textarea>
                                 <button id="save-review-${shop.id}" class="mt-1 w-full bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-1 rounded text-xs transition-colors">メモを保存</button>
                             </div>` : ''}
                             ${isAdmin ? `<button id="edit-shop-${shop.id}" class="mt-2 w-full bg-brand-600 text-white font-bold py-1 rounded text-sm">編集する</button>` : ''}
@@ -699,7 +756,7 @@
                     }
                 };
 
-            }, [localMap, visitedShops, favoriteShops, shopReviews, searchQuery, isAdmin, showOnlyUnvisited, visitFilter, showOpenNow, showCashlessOnly, walkingOrigin, walkingTime]);
+            }, [localMap, visitedShops, favoriteShops, shopReviews, searchQuery, isAdmin, showOnlyUnvisited, visitFilter, showOpenNow, showCashlessOnly, walkingOrigin, walkingTime, darkMode]);
 
             const handleSaveData = async () => {
                 setIsSaving(true);
@@ -907,7 +964,7 @@
                     )}
 
                     <div className="absolute top-0 left-0 right-0 p-3 md:p-4 pointer-events-none z-[1000] flex flex-col gap-2">
-                        <div className="flex w-full gap-2 pointer-events-auto shadow-xl rounded-xl bg-white p-1 items-center">
+                        <div className="flex w-full gap-2 pointer-events-auto shadow-xl rounded-xl bg-white dark:bg-gray-800 p-1 items-center transition-colors">
                             <div 
                                 onClick={handleAdminToggle}
                                 className="px-3 py-2 bg-brand-600 text-white font-black rounded-lg cursor-pointer select-none hover:bg-brand-500 transition-colors flex-shrink-0"
@@ -925,7 +982,7 @@
                             <input
                                 type="text"
                                 placeholder="店名を検索..."
-                                className="flex-1 px-4 py-2 rounded-lg border-2 border-transparent focus:border-brand-500 outline-none font-bold text-stone-700 bg-slate-50 focus:bg-white transition-colors min-w-0"
+                                className="flex-1 px-4 py-2 rounded-lg border-2 border-transparent focus:border-brand-500 outline-none font-bold text-stone-700 dark:text-gray-200 bg-slate-50 dark:bg-gray-700 focus:bg-white dark:focus:bg-gray-600 transition-colors min-w-0"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 onKeyDown={handleSearchSubmit}
@@ -937,6 +994,14 @@
                                 {menuOpen ? '✕' : '☰'}
                             </button>
                             <div className="hidden md:flex gap-2 items-center">
+                                <button
+                                    onClick={() => setDarkMode(!darkMode)}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all ${darkMode ? 'bg-gray-600 text-yellow-300' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                                    title="ダークモード切替"
+                                >
+                                    {darkMode ? '🌙' : '☀️'}
+                                </button>
+
                                 <button
                                     onClick={() => setShowWalkingFilter(!showWalkingFilter)}
                                     className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${showWalkingFilter || walkingOrigin ? 'bg-red-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
@@ -973,7 +1038,14 @@
                         </div>
 
                         {menuOpen && (
-                            <div className="md:hidden pointer-events-auto flex gap-2 flex-wrap bg-white/95 backdrop-blur-sm shadow-xl rounded-xl p-2 animate-[fadeIn_0.15s_ease-out]">
+                            <div className="md:hidden pointer-events-auto flex gap-2 flex-wrap bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-xl rounded-xl p-2 animate-[fadeIn_0.15s_ease-out]">
+                                <button
+                                    onClick={() => setDarkMode(!darkMode)}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${darkMode ? 'bg-gray-600 text-yellow-300' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                                >
+                                    {darkMode ? '🌙 ダークモード' : '☀️ ライトモード'}
+                                </button>
+
                                 <button
                                     onClick={() => { setShowWalkingFilter(!showWalkingFilter); setMenuOpen(false); }}
                                     className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${showWalkingFilter || walkingOrigin ? 'bg-red-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
@@ -1006,17 +1078,17 @@
                         )}
 
                         {showWalkingFilter && (
-                            <div className="pointer-events-auto absolute top-16 left-4 md:left-64 bg-white p-4 rounded-xl shadow-2xl border border-gray-100 z-[1001] w-80">
+                            <div className="pointer-events-auto absolute top-16 left-4 md:left-64 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700 z-[1001] w-80">
                                 <div className="flex justify-between items-center mb-3">
-                                    <h3 className="font-bold text-gray-800">📍 徒歩圏内で探す</h3>
-                                    <button onClick={() => setShowWalkingFilter(false)} className="text-gray-400 hover:text-gray-600 font-bold">✕</button>
+                                    <h3 className="font-bold text-gray-800 dark:text-gray-200">📍 徒歩圏内で探す</h3>
+                                    <button onClick={() => setShowWalkingFilter(false)} className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 font-bold">✕</button>
                                 </div>
                                 
                                 <div className="flex gap-2 mb-3">
                                     <input 
                                         type="text" 
                                         placeholder="駅名・地名（例: 新宿）" 
-                                        className="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:bg-white focus:border-brand-500 outline-none"
+                                        className="flex-1 px-3 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-sm bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600 focus:border-brand-500 outline-none"
                                         value={locationQuery}
                                         onChange={(e) => setLocationQuery(e.target.value)}
                                         onKeyDown={(e) => e.key === 'Enter' && handleLocationSearch()}
@@ -1033,15 +1105,15 @@
                                 <button 
                                     onClick={handleOriginCurrentLocation}
                                     disabled={isLocating}
-                                    className="w-full mb-4 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
+                                    className="w-full mb-4 bg-blue-50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-800/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
                                 >
                                     {isLocating ? '⏳ 取得中...' : '🎯 現在地から探す'}
                                 </button>
                                 
                                 {walkingOrigin && (
-                                    <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
-                                        <p className="text-xs text-gray-500 mb-2 font-bold flex justify-between">
-                                            <span>基準点: <span className="text-brand-600">{walkingOrigin.name}</span></span>
+                                    <div className="bg-slate-50 dark:bg-gray-900/50 p-3 rounded-lg border border-slate-100 dark:border-gray-700">
+                                        <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 font-bold flex justify-between">
+                                            <span>基準点: <span className="text-brand-600 dark:text-brand-400">{walkingOrigin.name}</span></span>
                                             <button onClick={() => { setWalkingOrigin(null); setWalkingTime(null); }} className="text-red-500 hover:underline">クリア</button>
                                         </p>
                                         <div className="grid grid-cols-4 gap-1">
@@ -1049,7 +1121,7 @@
                                                 <button
                                                     key={mins || 'none'}
                                                     onClick={() => setWalkingTime(mins)}
-                                                    className={`py-1.5 rounded text-xs font-bold transition-colors ${walkingTime === mins ? 'bg-brand-500 text-white shadow-sm' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}
+                                                    className={`py-1.5 rounded text-xs font-bold transition-colors ${walkingTime === mins ? 'bg-brand-500 text-white shadow-sm' : 'bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600'}`}
                                                 >
                                                     {mins ? `${mins}分` : '解除'}
                                                 </button>
@@ -1109,6 +1181,17 @@
 
         function App() {
             const [selectedPrefecture] = useState(PREFECTURES.find(p => p.name === "東京都"));
+            const [darkMode, setDarkMode] = useState(() => localStorage.getItem('burger_dark') === 'true');
+
+            useEffect(() => {
+                if (darkMode) {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('burger_dark', 'true');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('burger_dark', 'false');
+                }
+            }, [darkMode]);
 
             const [visitedShops, setVisitedShops] = useState(() => {
                 const saved = localStorage.getItem('burger_visited');
@@ -1129,12 +1212,14 @@
             };
 
             return (
-                <div className="h-full w-full">
+                <div className="h-full w-full bg-white dark:bg-gray-900 transition-colors">
                     <MapView
                         selectedPrefecture={selectedPrefecture}
                         onBack={() => { }}
                         visitedShops={visitedShops}
                         toggleVisited={toggleVisited}
+                        darkMode={darkMode}
+                        setDarkMode={setDarkMode}
                     />
                 </div>
             );
