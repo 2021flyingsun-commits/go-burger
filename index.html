@@ -321,6 +321,18 @@
 
         // --- COMPONENTS ---
 
+        // Rank system based on visited shop count
+        function getRank(count) {
+            if (count >= 500) return { title: 'バーガー神', emoji: '👑', color: 'from-yellow-400 to-amber-500', next: null, need: 0 };
+            if (count >= 300) return { title: 'バーガー王', emoji: '🏆', color: 'from-amber-500 to-orange-500', next: 500, need: 500 - count };
+            if (count >= 150) return { title: 'バーガーマスター', emoji: '🥇', color: 'from-red-500 to-rose-600', next: 300, need: 300 - count };
+            if (count >= 80) return { title: 'バーガーマニア', emoji: '🔥', color: 'from-orange-500 to-red-500', next: 150, need: 150 - count };
+            if (count >= 40) return { title: 'バーガー通', emoji: '⭐', color: 'from-purple-500 to-indigo-500', next: 80, need: 80 - count };
+            if (count >= 15) return { title: 'バーガー好き', emoji: '🍔', color: 'from-green-500 to-emerald-500', next: 40, need: 40 - count };
+            if (count >= 5) return { title: 'バーガー見習い', emoji: '🌱', color: 'from-sky-500 to-blue-500', next: 15, need: 15 - count };
+            return { title: 'バーガー初心者', emoji: '🐣', color: 'from-gray-400 to-gray-500', next: 5, need: 5 - count };
+        }
+
         function MapView({ selectedPrefecture, onBack, visitedShops, toggleVisited }) {
             const mapRef = useRef(null);
             const [localMap, setLocalMap] = useState(null);
@@ -344,6 +356,11 @@
             // Feature 7: Dice Roll
             const [isRolling, setIsRolling] = useState(false);
             const [rollingShopName, setRollingShopName] = useState(null);
+
+            // Feature 8: Rank
+            const [showRank, setShowRank] = useState(false);
+            const visitedCount = visitedShops.size;
+            const rank = getRank(visitedCount);
 
             // Feature 2: Favorites
             const [favoriteShops, setFavoriteShops] = useState(() => {
@@ -853,6 +870,42 @@
                         </div>
                     )}
 
+                    {showRank && (
+                        <div className="absolute inset-0 z-[2000] bg-black/50 backdrop-blur-sm flex items-center justify-center pointer-events-auto" onClick={() => setShowRank(false)}>
+                            <div className="bg-white rounded-3xl shadow-2xl p-6 w-[340px] max-w-[90%] text-center" onClick={(e) => e.stopPropagation()}>
+                                <div className="text-6xl mb-2">{rank.emoji}</div>
+                                <h2 className={`text-2xl font-black bg-gradient-to-r ${rank.color} bg-clip-text text-transparent mb-1`}>{rank.title}</h2>
+                                <p className="text-gray-500 text-sm font-bold mb-4">訪問済み: <span className="text-brand-600 text-lg">{visitedCount}</span> 店舗 / {ALL_SHOPS.length} 店舗</p>
+                                
+                                <div className="bg-gray-100 rounded-xl p-3 mb-4">
+                                    <div className="w-full bg-gray-300 rounded-full h-3 mb-2 overflow-hidden">
+                                        <div className={`h-full rounded-full bg-gradient-to-r ${rank.color} transition-all duration-500`} style={{ width: `${rank.next ? ((rank.next - rank.need) / rank.next * 100) : 100}%` }}></div>
+                                    </div>
+                                    {rank.next ? (
+                                        <p className="text-xs text-gray-500 font-bold">次の称号まであと <span className="text-brand-600 font-black text-sm">{rank.need}</span> 店舗</p>
+                                    ) : (
+                                        <p className="text-xs text-amber-600 font-black">🎉 最高ランク到達！おめでとうございます！</p>
+                                    )}
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-1 text-[11px]">
+                                    {[
+                                        { e: '🐣', t: '初心者', n: 0 }, { e: '🌱', t: '見習い', n: 5 },
+                                        { e: '🍔', t: '好き', n: 15 }, { e: '⭐', t: '通', n: 40 },
+                                        { e: '🔥', t: 'マニア', n: 80 }, { e: '🥇', t: 'マスター', n: 150 },
+                                        { e: '🏆', t: '王', n: 300 }, { e: '👑', t: '神', n: 500 },
+                                    ].map(r => (
+                                        <div key={r.n} className={`flex items-center gap-1 px-2 py-1 rounded ${visitedCount >= r.n ? 'bg-brand-50 text-brand-700 font-bold' : 'text-gray-400'}`}>
+                                            <span>{r.e}</span> {r.t} <span className="ml-auto text-gray-400">{r.n}~</span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <button onClick={() => setShowRank(false)} className="mt-4 w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-2 rounded-xl transition-colors">閉じる</button>
+                            </div>
+                        </div>
+                    )}
+
                     <div className="absolute top-0 left-0 right-0 p-3 md:p-4 pointer-events-none z-[1000] flex flex-col gap-2">
                         <div className="flex w-full gap-2 pointer-events-auto shadow-xl rounded-xl bg-white p-1 items-center">
                             <div 
@@ -861,6 +914,14 @@
                             >
                                 GO BURGER
                             </div>
+                            <button
+                                onClick={() => setShowRank(true)}
+                                className={`flex-shrink-0 px-2 py-1 rounded-lg bg-gradient-to-r ${rank.color} text-white font-bold text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center gap-1`}
+                            >
+                                <span>{rank.emoji}</span>
+                                <span className="hidden sm:inline">{rank.title}</span>
+                                <span className="sm:hidden">{visitedCount}</span>
+                            </button>
                             <input
                                 type="text"
                                 placeholder="店名を検索..."
@@ -1035,16 +1096,12 @@
                         </button>
                     </div>
 
-                    <div className="absolute bottom-0 left-0 right-0 z-[1000] pointer-events-auto bg-gray-100/95 backdrop-blur-sm border-t border-gray-300 flex flex-col items-center justify-start shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] h-[75px] md:h-[115px] overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 z-[1000] pointer-events-auto bg-gray-100/95 backdrop-blur-sm border-t border-gray-300 flex flex-col items-center justify-start shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] h-[65px] overflow-hidden">
                         <div className="text-[10px] text-gray-500 font-bold tracking-widest leading-none py-1">スポンサーリンク</div>
-                        <div className="w-[320px] md:w-[728px] h-[50px] md:h-[90px] bg-white flex items-center justify-center overflow-hidden shadow-inner">
-                            <ins className="adsbygoogle"
-                                 style={{ display: 'inline-block', width: '100%', height: '100%' }}
-                                 data-ad-client="ca-pub-9509204113741918"
-                                 data-ad-slot="4612673168"
-                                 data-ad-format="horizontal"
-                                 data-full-width-responsive="false"></ins>
-                        </div>
+                        <ins className="adsbygoogle"
+                             style={{ display: 'inline-block', width: '320px', height: '50px' }}
+                             data-ad-client="ca-pub-9509204113741918"
+                             data-ad-slot="7838436451"></ins>
                     </div>
                 </div>
             );
