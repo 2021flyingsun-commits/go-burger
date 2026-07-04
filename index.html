@@ -332,6 +332,7 @@
             const [adminClickCount, setAdminClickCount] = useState(0);
             const [showOnlyUnvisited, setShowOnlyUnvisited] = useState(false);
             const [isSaving, setIsSaving] = useState(false);
+            const [menuOpen, setMenuOpen] = useState(false);
 
             // Feature 6: Walking Distance
             const [showWalkingFilter, setShowWalkingFilter] = useState(false);
@@ -852,55 +853,96 @@
                         </div>
                     )}
 
-                    <div className="absolute top-0 left-0 right-0 p-4 pointer-events-none z-[1000] flex flex-col md:flex-row gap-2 items-start md:items-center justify-between">
-                        <div className="flex w-full md:w-auto gap-2 pointer-events-auto shadow-xl rounded-xl bg-white p-1 items-center flex-wrap">
+                    <div className="absolute top-0 left-0 right-0 p-3 md:p-4 pointer-events-none z-[1000] flex flex-col gap-2">
+                        <div className="flex w-full gap-2 pointer-events-auto shadow-xl rounded-xl bg-white p-1 items-center">
                             <div 
                                 onClick={handleAdminToggle}
-                                className="px-3 py-2 bg-brand-600 text-white font-black rounded-lg cursor-pointer select-none hover:bg-brand-500 transition-colors"
+                                className="px-3 py-2 bg-brand-600 text-white font-black rounded-lg cursor-pointer select-none hover:bg-brand-500 transition-colors flex-shrink-0"
                             >
-                                GB
+                                GO BURGER
                             </div>
                             <input
                                 type="text"
                                 placeholder="店名を検索..."
-                                className="flex-1 md:w-64 px-4 py-2 rounded-lg border-2 border-transparent focus:border-brand-500 outline-none font-bold text-stone-700 bg-slate-50 focus:bg-white transition-colors min-w-[120px]"
+                                className="flex-1 px-4 py-2 rounded-lg border-2 border-transparent focus:border-brand-500 outline-none font-bold text-stone-700 bg-slate-50 focus:bg-white transition-colors min-w-0"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 onKeyDown={handleSearchSubmit}
                             />
                             <button
-                                onClick={() => setShowWalkingFilter(!showWalkingFilter)}
-                                className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${showWalkingFilter || walkingOrigin ? 'bg-red-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
-                                title="徒歩圏内で探す"
+                                onClick={() => setMenuOpen(!menuOpen)}
+                                className={`md:hidden px-3 py-2 rounded-lg font-bold text-sm transition-all flex-shrink-0 ${menuOpen ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                             >
-                                📍 徒歩圏内
+                                {menuOpen ? '✕' : '☰'}
                             </button>
-                            <button
-                                onClick={() => setVisitFilter(f => f === 'all' ? 'visited' : f === 'visited' ? 'favorites' : 'all')}
-                                className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${
-                                    visitFilter === 'visited' ? 'bg-yellow-500 text-white' :
-                                    visitFilter === 'favorites' ? 'bg-blue-500 text-white' :
-                                    'bg-slate-100 text-slate-500 hover:bg-slate-200'
-                                }`}
-                                title="表示フィルター切替"
-                            >
-                                {visitFilter === 'visited' ? '🟡 行った' : visitFilter === 'favorites' ? '🔵 行きたい' : '🗂️ 全表示'}
-                            </button>
-                            <button
-                                onClick={() => setShowOpenNow(!showOpenNow)}
-                                className={`px-3 py-2 rounded-lg font-bold text-xs transition-all ${showOpenNow ? 'bg-green-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
-                                title="現在営業中のみ"
-                            >
-                                🕒 営業中
-                            </button>
-                            <button
-                                onClick={() => setShowCashlessOnly(!showCashlessOnly)}
-                                className={`px-3 py-2 rounded-lg font-bold text-xs transition-all ${showCashlessOnly ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
-                                title="キャッシュレス対応のみ"
-                            >
-                                💳 キャッシュレス
-                            </button>
+                            <div className="hidden md:flex gap-2 items-center">
+                                <button
+                                    onClick={() => setShowWalkingFilter(!showWalkingFilter)}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${showWalkingFilter || walkingOrigin ? 'bg-red-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                                    title="徒歩圏内で探す"
+                                >
+                                    📍 徒歩圏内
+                                </button>
+                                <button
+                                    onClick={() => setVisitFilter(f => f === 'all' ? 'visited' : f === 'visited' ? 'favorites' : 'all')}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${
+                                        visitFilter === 'visited' ? 'bg-yellow-500 text-white' :
+                                        visitFilter === 'favorites' ? 'bg-blue-500 text-white' :
+                                        'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                                    }`}
+                                    title="表示フィルター切替"
+                                >
+                                    {visitFilter === 'visited' ? '🟡 行った' : visitFilter === 'favorites' ? '🔵 行きたい' : '🍔 全店舗'}
+                                </button>
+                                <button
+                                    onClick={() => setShowOpenNow(!showOpenNow)}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all ${showOpenNow ? 'bg-green-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                                    title="現在営業中のみ"
+                                >
+                                    🕒 営業中
+                                </button>
+                                <button
+                                    onClick={() => setShowCashlessOnly(!showCashlessOnly)}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all ${showCashlessOnly ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                                    title="キャッシュレス対応のみ"
+                                >
+                                    💳 キャッシュレス
+                                </button>
+                            </div>
                         </div>
+
+                        {menuOpen && (
+                            <div className="md:hidden pointer-events-auto flex gap-2 flex-wrap bg-white/95 backdrop-blur-sm shadow-xl rounded-xl p-2 animate-[fadeIn_0.15s_ease-out]">
+                                <button
+                                    onClick={() => { setShowWalkingFilter(!showWalkingFilter); setMenuOpen(false); }}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${showWalkingFilter || walkingOrigin ? 'bg-red-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                                >
+                                    📍 徒歩圏内
+                                </button>
+                                <button
+                                    onClick={() => { setVisitFilter(f => f === 'all' ? 'visited' : f === 'visited' ? 'favorites' : 'all'); setMenuOpen(false); }}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${
+                                        visitFilter === 'visited' ? 'bg-yellow-500 text-white' :
+                                        visitFilter === 'favorites' ? 'bg-blue-500 text-white' :
+                                        'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                                    }`}
+                                >
+                                    {visitFilter === 'visited' ? '🟡 行った' : visitFilter === 'favorites' ? '🔵 行きたい' : '🍔 全店舗'}
+                                </button>
+                                <button
+                                    onClick={() => { setShowOpenNow(!showOpenNow); setMenuOpen(false); }}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all ${showOpenNow ? 'bg-green-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                                >
+                                    🕒 営業中
+                                </button>
+                                <button
+                                    onClick={() => { setShowCashlessOnly(!showCashlessOnly); setMenuOpen(false); }}
+                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all ${showCashlessOnly ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                                >
+                                    💳 キャッシュレス
+                                </button>
+                            </div>
+                        )}
 
                         {showWalkingFilter && (
                             <div className="pointer-events-auto absolute top-16 left-4 md:left-64 bg-white p-4 rounded-xl shadow-2xl border border-gray-100 z-[1001] w-80">
