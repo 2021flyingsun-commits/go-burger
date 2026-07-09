@@ -7,7 +7,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.7056,
         "hours": "平11:30-23:00/土日祝9:00-23:00",
         "payment": "VISA/MC/JCB/AMEX/Suica/iD/PayPay",
-        "website": "https://www.the-great-burger.com/"
+        "website": null
     },
     {
         "id": 2,
@@ -47,7 +47,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.7045,
         "hours": "11:00-20:00",
         "payment": "VISA/MC/JCB/AMEX/Suica/iD/PayPay",
-        "website": "https://www.henrysburger.com/"
+        "website": null
     },
     {
         "id": 6,
@@ -57,7 +57,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.7038,
         "hours": "11:00-20:00",
         "payment": "VISA/MC/JCB/AMEX/Suica/iD/PayPay",
-        "website": "https://www.henrysburger.com/"
+        "website": null
     },
     {
         "id": 7,
@@ -87,7 +87,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.7061,
         "hours": "11:00-21:00",
         "payment": "VISA/MC/JCB/AMEX/UnionPay/Suica/iD/QUICPay/PayPay/WeChat",
-        "website": "https://kuroge-wagyu.com/bc/"
+        "website": null
     },
     {
         "id": 10,
@@ -167,7 +167,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.709,
         "hours": "11:00-23:00/日22:00",
         "payment": "VISA/MC/JCB/AMEX/Suica/iD/PayPay",
-        "website": "https://www.omotesandohills.com/shop/detail/61/"
+        "website": null
     },
     {
         "id": 18,
@@ -327,7 +327,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.7011,
         "hours": "11:30-22:30",
         "payment": "VISA/MC/JCB/AMEX/PayPay/d払い",
-        "website": "https://texmexfactory.owst.jp/"
+        "website": null
     },
     {
         "id": 34,
@@ -337,7 +337,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.6917,
         "hours": "11:00-20:00",
         "payment": "VISA/MC/JCB/Suica/PayPay",
-        "website": "https://heartslightcoffee.com/"
+        "website": null
     },
     {
         "id": 35,
@@ -377,7 +377,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.7042,
         "hours": "10:00-23:00",
         "payment": "VISA/MC/JCB/AMEX/Suica/iD/PayPay",
-        "website": "https://caffice.jp/"
+        "website": null
     },
     {
         "id": 39,
@@ -537,7 +537,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.6797,
         "hours": "11:00-23:00 (不定休)",
         "payment": "VISA/MC/JCB/AMEX/PayPay",
-        "website": "https://tabelog.com/tokyo/A1317/A131710/13105267/"
+        "website": null
     },
     {
         "id": 61,
@@ -567,7 +567,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.6991,
         "hours": "11:00-23:00 (施設に準ずる)",
         "payment": "VISA/MC/JCB/AMEX/Suica/iD/PayPay",
-        "website": "https://delifucious.com/"
+        "website": null
     },
     {
         "id": 64,
@@ -3917,7 +3917,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.6995,
         "hours": "11:00-22:00",
         "payment": "クレカ可",
-        "website": "https://lilwoodys.co.jp/"
+        "website": null
     },
     {
         "id": 5514,
@@ -3937,7 +3937,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.706924,
         "hours": "11:00-20:00",
         "payment": "クレカ可",
-        "website": "https://www.cafe-studio.jp/"
+        "website": null
     },
     {
         "id": 5517,
@@ -3947,7 +3947,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.698715,
         "hours": "17:00-24:00",
         "payment": "クレカ可",
-        "website": "https://sf-peaks.com/"
+        "website": null
     },
     {
         "id": 5518,
@@ -5347,7 +5347,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.69167,
         "hours": "11:30-21:00",
         "payment": "クレカ可",
-        "website": "https://jiyugaoka-burger.com/"
+        "website": null
     },
     {
         "id": 5674,
@@ -5547,7 +5547,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.69167,
         "hours": "11:00-21:00",
         "payment": "クレカ可",
-        "website": "http://bakerbounce.com/"
+        "website": null
     },
     {
         "id": 5694,
@@ -7066,7 +7066,7 @@ const FULL_TOKYO_SHOPS = [
         "lng": 139.7088,
         "hours": "11:00-22:00",
         "payment": "VISA/MC/JCB/AMEX/PayPay",
-        "website": "https://tabelog.com/tokyo/A1305/A130501/13272619/",
+        "website": null,
         "id": 5940
     },
     {
