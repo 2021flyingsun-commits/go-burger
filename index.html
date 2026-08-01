@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>GO BURGER</title>
+    <title>GO BURGER - 全国グルメバーガー・クラフトバーガー専門店マップ＆ガイド</title>
     
     <!-- Icons -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -54,7 +54,7 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <!-- mass data -->
-    <script src="tokyo_shops_full.js"></script>
+    <script src="japan_shops_full.js"></script>
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -144,50 +144,191 @@
             });
         }
     </script>
+    <meta name="description" content="日本全国の厳選グルメバーガー・クラフトバーガー専門店1,000店舗以上を網羅した専門検索ガイドマップ。現在地周辺検索、電子マネーフィルター、営業状況、名店解説ガイドを掲載。">
+    <meta name="keywords" content="ハンバーガー,グルメバーガー,クラフトバーガー,ハンバーガーショップ,全国ハンバーガーマップ,GO BURGER">
 </head>
 
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden select-none">
     <div id="root" class="h-[100dvh] w-full relative z-10 shadow-xl"></div>
     
-    <div id="seo-content" class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 px-6 py-12 w-full select-text flex flex-col items-center">
-        <div class="max-w-4xl w-full">
-            <h1 class="text-3xl font-black mb-6 text-brand-600">GO BURGER - 東京ハンバーガーマップ</h1>
+    <div id="seo-content" class="bg-slate-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 px-6 py-16 w-full select-text flex flex-col items-center border-t border-slate-200 dark:border-gray-800">
+        <div class="max-w-4xl w-full space-y-12">
             
-            <section class="mb-10">
-                <h2 class="text-2xl font-bold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">GO BURGERについて</h2>
-                <p class="mb-3 leading-relaxed">
-                    GO BURGERは、東京都内にある本格的なハンバーガーショップ（グルメバーガー）を網羅したマップアプリケーションです。
-                    現在、都内の名店から隠れ家的なお店まで、数百店舗以上のデータを収録しています。
+            <header class="text-center space-y-4">
+                <span class="inline-block bg-brand-100 text-brand-700 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">National Craft Burger Directory</span>
+                <h1 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight">GO BURGER - 全国グルメバーガー・クラフトバーガー専門ガイド</h1>
+                <p class="text-slate-600 dark:text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">
+                    日本全国1,000店舗以上のこだわりグルメバーガー・クラフトバーガー専門店を網羅。現在地検索、決済方法、営業時間フィルターで、今食べるべき究極の一皿へ案内します。
                 </p>
-                <p class="mb-3 leading-relaxed">
-                    ユーザーは地図上から直感的にお店を探し、「行ったお店」や「行きたいお店」を記録することができます。
-                    位置情報を活用した徒歩圏内検索機能や、キャッシュレス対応、現在営業中の店舗の絞り込み機能も搭載し、今すぐ美味しいハンバーガーを食べたいというニーズにお応えします。
+            </header>
+
+            <!-- Section: About -->
+            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
+                <h2 class="text-2xl font-black text-brand-600 dark:text-brand-400 flex items-center gap-2">
+                    <span>🍔</span> GO BURGER（ゴーバーガー）とは？
+                </h2>
+                <p class="leading-relaxed text-slate-700 dark:text-gray-300">
+                    GO BURGERは、大手ファストフードチェーンとは一線を画す、職人こだわりの「グルメバーガー」「クラフトバーガー」専門店に特化した日本最大級のロケーションガイドです。
+                    つなぎ無しの100%ビーフパティ、特製オリジナルバンズ、仕込みに何時間もかける秘伝ソースなど、店主の情熱が詰まった全国1,000店舗以上の情報をリアルタイムに探索できます。
+                </p>
+                <p class="leading-relaxed text-slate-700 dark:text-gray-300">
+                    現在地からの徒歩圏内検索機能や、電子マネー・クレジットカード対応の絞り込み、リアルタイム営業状態のチェック、「行った店・行きたい店」のマイリスト機能など、ハンバーガー愛好家のための利便性を追求しています。
                 </p>
             </section>
 
-            <section class="mb-10">
-                <h2 class="text-2xl font-bold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">プライバシーポリシー・免責事項</h2>
-                <p class="mb-3 leading-relaxed text-sm">
-                    <strong>1. 広告の配信について</strong><br>
-                    当サイトでは、第三者配信の広告サービス（Google AdSense等）を利用しています。
-                    このような広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報 『Cookie』(氏名、住所、メール アドレス、電話番号は含まれません) を使用することがあります。
-                    Cookieを無効にする設定およびGoogleアドセンスに関する詳細は「<a href="https://policies.google.com/technologies/ads" target="_blank" class="text-blue-500 hover:underline">Googleポリシーと規約</a>」をご覧ください。
-                </p>
-                <p class="mb-3 leading-relaxed text-sm">
-                    <strong>2. 免責事項</strong><br>
-                    当サイトで提供している店舗情報（営業時間、所在地、決済方法など）は、作成時点のものであり、最新かつ正確であることを保証するものではありません。
-                    予告なく変更される場合がありますので、実際に訪問される際は公式ウェブサイトやSNS等で最新情報をご確認ください。
-                    当サイトの利用により生じたいかなる損害についても、運営者は一切の責任を負いません。
-                </p>
+            <!-- Section: Guide to Gourmet Burgers -->
+            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-6">
+                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                    <span>📖</span> グルメバーガーの魅力と選び方ガイド
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 dark:bg-gray-900 p-5 rounded-xl space-y-2">
+                        <h3 class="font-bold text-brand-600 dark:text-brand-400 text-lg">1. 塊肉から仕込む肉感パティ</h3>
+                        <p class="text-xs leading-relaxed text-slate-600 dark:text-gray-400">
+                            グルメバーガーの主役は肉。ステーキのように包丁で手切り（ハンドチョップ）した粗挽き肉や、鉄板で押し焼く「スマッシュスタイル」、和牛100%パティなど、噛むほどに肉汁が溢れる仕込みが特徴です。
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-gray-900 p-5 rounded-xl space-y-2">
+                        <h3 class="font-bold text-brand-600 dark:text-brand-400 text-lg">2. 具材を受け止める特製バンズ</h3>
+                        <p class="text-xs leading-relaxed text-slate-600 dark:text-gray-400">
+                            有名ベーカリー特注の酒種バンズや、リッチなブリオッシュ、香ばしいハード系バンズなど、肉汁とソースをしっかり吸い止める黄金バランスのパンが全体の一体感を生み出します。
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-gray-900 p-5 rounded-xl space-y-2">
+                        <h3 class="font-bold text-brand-600 dark:text-brand-400 text-lg">3. 独創的なソース＆トッピング</h3>
+                        <p class="text-xs leading-relaxed text-slate-600 dark:text-gray-400">
+                            自家製燻製ベーコン、濃厚チェダーやブルーチーズ、アボカド、自家製タルタルやスモーキーなBBQソースなど、シェフの個性が際立つトッピングの組み合わせも魅力です。
+                        </p>
+                    </div>
+                </div>
             </section>
 
-            <section class="mb-10">
-                <h2 class="text-2xl font-bold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">東京のハンバーガーショップ一覧</h2>
-                <p class="mb-4 text-sm text-gray-500">※以下は当サイトに収録されている東京都内のハンバーガーショップの一覧です。</p>
-                <div id="shop-directory-list" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <!-- Section: Regional Cultures -->
+            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
+                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                    <span>🗾</span> 日本全国のクラフトバーガー文化
+                </h2>
+                <div class="space-y-4 text-sm text-slate-700 dark:text-gray-300 leading-relaxed">
+                    <p>
+                        <strong>関東（東京・横浜）:</strong> 日本のグルメバーガー発祥の地であり、原宿・恵比寿・人形町・本郷などを中心に世界基準の本格アメリカンダイナーや先進的バーガーショップが集結しています。
+                    </p>
+                    <p>
+                        <strong>関西・東海（大阪・京都・名古屋）:</strong> 飛騨牛や近江牛などのブランド和牛を贅沢に使ったプレミアムバーガーや、出汁や和素材を取り入れた独創的バーガーが盛り上がりを見せています。
+                    </p>
+                    <p>
+                        <strong>九州・沖縄・北海道:</strong> 米軍基地カルチャーから生まれた「佐世保バーガー」や沖縄のアメリカンスタイルバーガー、北海道の豊かな十勝牛や新鮮野菜を味わうご当地バーガーなど地域ごとの特色が豊かです。
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section: Featured Famous Shops -->
+            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-6">
+                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                    <span>🏆</span> 編集部おすすめ！注目の名店ピックアップ
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-base text-slate-900 dark:text-white">THE GREAT BURGER</h3>
+                            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都渋谷区</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                            南原宿に佇む日本のグルメバーガー界のカリスマ。特製天然酵母バンズとジューシーな粗挽き肉、南カリフォルニアの空気感を再現したオールドアメリカンな空間が人々を惹きつけます。
+                        </p>
+                    </div>
+                    <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-base text-slate-900 dark:text-white">BROZERS' 人形町本店</h3>
+                            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都中央区</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                            2000年創業、赤を基調とした大人気アメリカンダイナー。名物「ロットバーガー」はベーコン、チーズ、エッグ、パインに特製BBQソースが絡み合う究極の一品。
+                        </p>
+                    </div>
+                    <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-base text-slate-900 dark:text-white">MUNCH'S BURGER SHACK</h3>
+                            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都港区</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                            塊肉を包丁で包丁叩きにしたつなぎ無しの100%USアンガスビーフパティ。まるで極上ステーキを食べているかのような力強い食感と肉汁が爆発します。
+                        </p>
+                    </div>
+                    <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-base text-slate-900 dark:text-white">Fire House</h3>
+                            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都文京区</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                            1996年創業の日本のグルメバーガー史を創ったレジェンド店。王道のアップルバーガーやモッツァレラバーガーなど、時代を超えて愛される洗練された味わい。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Shop Directory -->
+            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
+                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                    <span>📍</span> 日本全国のハンバーガーショップディレクトリ
+                </h2>
+                <p class="text-xs text-slate-500 dark:text-gray-400">※以下は当データベースに登録されている全国の店舗情報一覧です。</p>
+                <div id="shop-directory-list" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs max-h-[600px] overflow-y-auto pr-2">
                     <!-- JavaScript will populate this -->
                 </div>
             </section>
+
+            <!-- Section: Compliance & Policies -->
+            <section id="privacy-policy" class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-6">
+                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                    <span>⚖️</span> プライバシーポリシー・免責事項・運営情報
+                </h2>
+
+                <div class="space-y-4 text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                    <div>
+                        <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">1. 広告の配信について（Google AdSense等）</h3>
+                        <p>
+                            当サイト（GO BURGER）では、第三者配信の広告サービス（Google AdSense）を利用しています。
+                            このような広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報「Cookie」(氏名、住所、メール アドレス、電話番号は含まれません) を使用することがあります。
+                            Cookieを無効にする設定およびGoogleアドセンスに関する詳細は「<a href="https://policies.google.com/technologies/ads" target="_blank" class="text-brand-600 hover:underline">Googleポリシーと規約</a>」をご確認ください。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">2. アクセス解析ツールについて</h3>
+                        <p>
+                            当サイトでは、サービスの改善およびアクセス状況の把握のため、Cookieを使用したアクセス解析を行っています。トラフィックデータは匿名で収集されており、個人を特定するものではありません。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">3. 免責事項</h3>
+                        <p>
+                            当サイトで提供している店舗情報（所在地、営業時間、定休日、決済方法等）は正確を期すよう努めておりますが、店舗側の都合により変更される場合があります。
+                            実際に訪問される際は、各店舗の公式SNSやWebサイト、または電話等で最新情報をご確認ください。当サイトの利用により生じた損害等について、運営者は一切の責任を負いかねます。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">4. 著作権・掲載情報について</h3>
+                        <p>
+                            当サイトに掲載されているコンテンツ（文章、デザイン、プログラム）の無断転載・複製を禁止します。店舗情報の修正・削除のご依頼や、新規店舗の掲載リクエストがございましたら、下記のお問い合わせ窓口までご連絡ください。
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 dark:bg-gray-900 p-4 rounded-xl space-y-1">
+                        <h3 class="font-bold text-slate-900 dark:text-white text-sm">【運営者情報・お問い合わせ窓口】</h3>
+                        <p>運営元：GO BURGER 編集事務局</p>
+                        <p>お問い合わせメールアドレス：<a href="mailto:goburger.app.info@gmail.com" class="text-brand-600 font-bold hover:underline">goburger.app.info@gmail.com</a></p>
+                        <p class="text-[11px] text-slate-500">※掲載内容のご指摘、不具合のご報告、取材・掲載依頼等はお気軽にご連絡ください。</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="text-center text-xs text-slate-400 dark:text-gray-500 py-6 border-t border-slate-200 dark:border-gray-800">
+                <p>&copy; 2026 GO BURGER. All Rights Reserved.</p>
+            </footer>
+
         </div>
     </div>
 
@@ -197,6 +338,7 @@
         // --- DATA ---
 
         const PREFECTURES = [
+            { name: "全国", lat: 38.0, lng: 137.0 },
             { name: "北海道", lat: 43.064171, lng: 141.34694 }, { name: "青森県", lat: 40.82444, lng: 140.74 },
             { name: "岩手県", lat: 39.70361, lng: 141.15722 }, { name: "宮城県", lat: 38.26889, lng: 140.87194 },
             { name: "秋田県", lat: 39.71861, lng: 140.1025 }, { name: "山形県", lat: 38.24056, lng: 140.36333 },
@@ -292,30 +434,30 @@
                 { name: "hide mode", address: "東京都文京区本郷2-30-10 コーラルコート 1F", lat: 35.7072, lng: 139.7610, hours: "11:30-14:00/17:00-20:00 (定休:日月)", payment: "現金のみ", website: "https://tabelog.com/tokyo/A1310/A131004/13222449/" }
             ];
 
-            return data.map((s, i) => ({ id: i + 1, ...s }));
+            return data.map((s, i) => ({ id: i + 1, prefecture: "東京都", ...s }));
         };
 
         const TOKYO_SHOPS = generateTokyoShops();
 
         const OTHER_SHOPS = [];
 
-        // Merge curated shops with FULL_TOKYO_SHOPS, filtering out chains and low-quality entries
+        // Merge curated shops with FULL_JAPAN_SHOPS, filtering out chains and low-quality entries
         const CHAIN_NAMES = ['freshness burger', 'mcdonalds', 'mcdonald\'s', 'mos burger', 'carl\'s jr', 'cocos', 'family mart', 'famima',
             'lotteria', 'first kitchen', 'burger king', 'wendy\'s', 'nakau', 'matsuya', 'zetteria'];
 
-        const extraShops = (typeof FULL_TOKYO_SHOPS !== 'undefined' ? FULL_TOKYO_SHOPS : []).filter(s => {
+        const extraShops = (typeof FULL_JAPAN_SHOPS !== 'undefined' ? FULL_JAPAN_SHOPS : []).filter(s => {
             const nameLower = s.name.toLowerCase();
             // Skip chains
             if (CHAIN_NAMES.some(chain => nameLower.includes(chain))) return false;
-            // Skip entries with very poor coordinates (islands far from Tokyo)
-            if (s.lat < 35.5 || s.lat > 35.85 || s.lng < 139.3 || s.lng > 139.95) return false;
+
             // Skip N/A entries with no useful data at all
             if (s.hours === 'N/A' && s.website === 'N/A') return false;
             return true;
         }).map((s, i) => ({
             id: 5000 + i,
             name: s.name,
-            address: s.address || '東京都',
+            address: s.address || '不明',
+            prefecture: s.prefecture || '不明',
             lat: s.lat,
             lng: s.lng,
             hours: s.hours || 'N/A',
@@ -402,6 +544,46 @@
             return !/^現金のみ$/i.test(paymentStr.trim()) && paymentStr.toLowerCase() !== '現金';
         }
 
+        // --- SECURITY ---
+
+        // Sanitize strings to prevent XSS in innerHTML contexts
+        function sanitizeHTML(str) {
+            if (!str) return '';
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+        }
+
+        // Simple hash for backup integrity verification
+        async function computeHash(data) {
+            const encoder = new TextEncoder();
+            const dataBytes = encoder.encode(data);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', dataBytes);
+            return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Validate imported data structure
+        function validateBackupData(data) {
+            if (!data || typeof data !== 'object') return false;
+            if (data.appId !== 'go-burger') return false;
+            if (!Number.isInteger(data.version)) return false;
+            // Validate visited is array of numbers
+            if (data.visited && (!Array.isArray(data.visited) || !data.visited.every(v => typeof v === 'number'))) return false;
+            // Validate favorites is array of numbers
+            if (data.favorites && (!Array.isArray(data.favorites) || !data.favorites.every(v => typeof v === 'number'))) return false;
+            // Validate reviews is object with numeric keys
+            if (data.reviews && typeof data.reviews !== 'object') return false;
+            if (data.reviews) {
+                for (const [key, val] of Object.entries(data.reviews)) {
+                    if (isNaN(Number(key))) return false;
+                    if (typeof val !== 'object') return false;
+                    if (val.rating !== undefined && (typeof val.rating !== 'number' || val.rating < 0 || val.rating > 5)) return false;
+                    if (val.memo !== undefined && typeof val.memo !== 'string') return false;
+                    // Sanitize memo on import
+                    if (val.memo) val.memo = val.memo.substring(0, 500); // Limit length
+                }
+            }
+            return true;
+        }
+
         // --- COMPONENTS ---
 
         // Rank system based on visited shop count
@@ -416,7 +598,7 @@
             return { title: 'バーガー初心者', emoji: '🐣', color: 'from-gray-400 to-gray-500', next: 5, need: 5 - count };
         }
 
-        function MapView({ selectedPrefecture, onBack, visitedShops, toggleVisited, darkMode, setDarkMode }) {
+        function MapView({ selectedPrefecture, setSelectedPrefecture, onBack, visitedShops, toggleVisited }) {
             const mapRef = useRef(null);
             const tileLayerRef = useRef(null);
             const [localMap, setLocalMap] = useState(null);
@@ -429,6 +611,10 @@
             const [showOnlyUnvisited, setShowOnlyUnvisited] = useState(false);
             const [isSaving, setIsSaving] = useState(false);
             const [menuOpen, setMenuOpen] = useState(false);
+            const [showBackupModal, setShowBackupModal] = useState(false);
+            const [showPolicyModal, setShowPolicyModal] = useState(false);
+            const [backupStatus, setBackupStatus] = useState(null);
+            const fileInputRef = useRef(null);
 
             // Feature 6: Walking Distance
             const [showWalkingFilter, setShowWalkingFilter] = useState(false);
@@ -473,6 +659,74 @@
                 });
             };
 
+            // --- Backup / Restore ---
+            const handleExport = async () => {
+                try {
+                    const data = {
+                        appId: 'go-burger',
+                        version: 1,
+                        exportedAt: new Date().toISOString(),
+                        visited: [...visitedShops],
+                        favorites: [...favoriteShops],
+                        reviews: shopReviews,
+                        darkMode: darkMode
+                    };
+                    const jsonStr = JSON.stringify(data);
+                    const hash = await computeHash(jsonStr);
+                    const envelope = JSON.stringify({ data: JSON.parse(jsonStr), hash });
+                    const blob = new Blob([envelope], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `go-burger-backup-${new Date().toISOString().slice(0,10)}.json`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    setBackupStatus({ type: 'success', message: '✅ バックアップファイルをダウンロードしました！' });
+                } catch (e) {
+                    setBackupStatus({ type: 'error', message: '❌ エクスポートに失敗しました' });
+                }
+            };
+
+            const handleImport = async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                try {
+                    const text = await file.text();
+                    const envelope = JSON.parse(text);
+                    // Verify integrity hash
+                    const expectedHash = await computeHash(JSON.stringify(envelope.data));
+                    if (envelope.hash !== expectedHash) {
+                        setBackupStatus({ type: 'error', message: '❌ ファイルが改ざんされている可能性があります' });
+                        return;
+                    }
+                    const data = envelope.data;
+                    if (!validateBackupData(data)) {
+                        setBackupStatus({ type: 'error', message: '❌ 無効なバックアップファイルです' });
+                        return;
+                    }
+                    // Restore data
+                    if (data.visited) {
+                        const newVisited = new Set(data.visited);
+                        localStorage.setItem('burger_visited', JSON.stringify([...newVisited]));
+                    }
+                    if (data.favorites) {
+                        const newFavorites = new Set(data.favorites);
+                        setFavoriteShops(newFavorites);
+                        localStorage.setItem('burger_favorites', JSON.stringify([...newFavorites]));
+                    }
+                    if (data.reviews) {
+                        setShopReviews(data.reviews);
+                        localStorage.setItem('burger_reviews', JSON.stringify(data.reviews));
+                    }
+                    setBackupStatus({ type: 'success', message: `✅ 復元完了！ (行った: ${data.visited?.length || 0}店, 行きたい: ${data.favorites?.length || 0}店, レビュー: ${Object.keys(data.reviews || {}).length}件)\nページをリロードして反映します。` });
+                    setTimeout(() => location.reload(), 2000);
+                } catch (e) {
+                    setBackupStatus({ type: 'error', message: '❌ ファイルの読み込みに失敗しました。正しいバックアップファイルか確認してください。' });
+                }
+                // Reset file input
+                if (fileInputRef.current) fileInputRef.current.value = '';
+            };
+
             // Feature 3: Filters
             const [showOpenNow, setShowOpenNow] = useState(false);
             const [showCashlessOnly, setShowCashlessOnly] = useState(false);
@@ -501,12 +755,10 @@
                     markersRef.current.clear();
                 }
 
-                const map = L.map(mapRef.current, { zoomControl: false }).setView([selectedPrefecture.lat, selectedPrefecture.lng], 12);
+                const zoomLevel = selectedPrefecture.name === "全国" ? 5 : 12;
+                const map = L.map(mapRef.current, { zoomControl: false }).setView([selectedPrefecture.lat, selectedPrefecture.lng], zoomLevel);
 
-                // CARTO Voyager / Dark Matter depending on dark mode
-                const tileUrl = darkMode 
-                    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-                    : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+                const tileUrl = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
                 tileLayerRef.current = L.tileLayer(tileUrl, {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
                     subdomains: 'abcd',
@@ -520,20 +772,18 @@
                 return () => {
                     map.remove();
                 };
-            }, [selectedPrefecture]);
+            }, []); // Empty dependency array: run only once!
 
-            // Update Map tile when dark mode changes without re-rendering everything
-            useEffect(() => {
-                if (tileLayerRef.current) {
-                    const tileUrl = darkMode 
-                        ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-                        : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-                    tileLayerRef.current.setUrl(tileUrl);
+            // Update map view when prefecture changes
+            React.useEffect(() => {
+                if (localMap && selectedPrefecture) {
+                    const zoomLevel = selectedPrefecture.name === "全国" ? 5 : 12;
+                    localMap.setView([selectedPrefecture.lat, selectedPrefecture.lng], zoomLevel);
                 }
-            }, [darkMode]);
+            }, [selectedPrefecture, localMap]);
 
             // Initialize AdSense
-            useEffect(() => {
+            React.useEffect(() => {
                 try {
                     (window.adsbygoogle = window.adsbygoogle || []).push({});
                 } catch (e) {
@@ -548,8 +798,11 @@
                 const markerLayer = L.layerGroup();
                 markersRef.current.clear();
 
-                // 1. All Shops (curated + extra from FULL_TOKYO_SHOPS)
+                // 1. All Shops (curated + extra from FULL_JAPAN_SHOPS)
                 const curatedMatches = ALL_SHOPS.filter(shop => {
+                    if (selectedPrefecture.name !== "全国" && shop.prefecture !== selectedPrefecture.name) {
+                        return false;
+                    }
                     const q = searchQuery.toLowerCase();
                     const matchesSearch = !q ||
                         shop.name.toLowerCase().includes(q) ||
@@ -604,14 +857,17 @@
                         ).join('');
                         popupContent.innerHTML = `
                             <div class="flex justify-between items-start mb-1">
-                                <h3 class="text-base font-black text-brand-900 font-sans leading-tight">${shop.name}</h3>
+                                <h3 class="text-base font-black text-brand-900 font-sans leading-tight">${sanitizeHTML(shop.name)}</h3>
                                 <button id="fav-btn-${shop.id}" class="text-2xl transition-transform hover:scale-125 ml-2 flex-shrink-0" title="行きたい！">${localFav ? '⭐' : '☆'}</button>
                             </div>
-                            <p class="text-xs text-gray-500 mb-1 font-bold bg-gray-100 inline-block px-1 rounded">${shop.address}</p>
+                            <p class="text-xs text-gray-500 mb-1 font-bold bg-gray-100 inline-block px-1 rounded">${sanitizeHTML(shop.address)}</p>
                             <div class="space-y-1 text-xs text-gray-700 border-t-2 border-brand-100 pt-2 my-2 font-medium">
-                                <p class="flex items-center gap-1"><span>🕒</span> ${shop.hours}</p>
-                                <div class="flex items-start gap-1"><span class="flex-shrink-0 mt-0.5">💳</span><div class="flex flex-wrap gap-1">${(shop.payment || 'N/A').split('/').map(m => `<span class="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-1.5 py-0.5 rounded">${m.trim()}</span>`).join('')}</div></div>
-                                ${shop.website ? `<a href="${shop.website}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 !text-white font-bold py-2.5 rounded-lg text-sm mt-1 mb-1 transition-all shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95" style="color: white !important;"><span>🌐</span> ウェブサイトを開く <span style="font-size:10px;opacity:0.8">↗</span></a>` : ''}
+                                <p class="flex items-center gap-1"><span>🕒</span> ${sanitizeHTML(shop.hours)}</p>
+                                <div class="flex items-start gap-1"><span class="flex-shrink-0 mt-0.5">💳</span><div class="flex flex-wrap gap-1">${(shop.payment || 'N/A').split('/').map(m => `<span class="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-1.5 py-0.5 rounded">${sanitizeHTML(m.trim())}</span>`).join('')}</div></div>
+                                ${shop.website 
+                                    ? `<a href="${encodeURI(shop.website)}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 !text-white font-bold py-2.5 rounded-lg text-sm mt-1 mb-1 transition-all shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95" style="color: white !important;"><span>🌐</span> ウェブサイトを開く <span style="font-size:10px;opacity:0.8">↗</span></a>` 
+                                    : `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(shop.name + ' ' + shop.address)}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-stone-500 to-stone-600 hover:from-stone-400 hover:to-stone-500 !text-white font-bold py-2.5 rounded-lg text-sm mt-1 mb-1 transition-all shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95" style="color: white !important;"><span>🔍</span> Googleマップで詳細情報を見る <span style="font-size:10px;opacity:0.8">↗</span></a>`
+                                }
                             </div>
                             <a href="https://www.google.com/maps/dir/?api=1&destination=${shop.lat},${shop.lng}" target="_blank" rel="noopener noreferrer"
                                class="block w-full text-center bg-sky-100 hover:bg-sky-200 text-sky-800 font-bold py-2 rounded-lg text-sm mb-2 transition-colors border border-sky-300">
@@ -625,7 +881,7 @@
                             <div class="bg-yellow-50 dark:bg-yellow-900/30 rounded-lg p-2 border border-yellow-200 dark:border-yellow-700">
                                 <p class="text-xs font-bold text-yellow-800 dark:text-yellow-200 mb-1">⭐ 自分の評価</p>
                                 <div class="flex gap-1 mb-2" id="stars-${shop.id}">${stars}</div>
-                                <textarea id="memo-${shop.id}" rows="2" placeholder="メモ（感想・次に頼むもの等）" class="w-full text-xs p-1 border border-yellow-300 dark:border-yellow-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded resize-none focus:outline-none focus:border-yellow-500">${review.memo}</textarea>
+                                <textarea id="memo-${shop.id}" rows="2" placeholder="メモ（感想・次に頼むもの等）" class="w-full text-xs p-1 border border-yellow-300 dark:border-yellow-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded resize-none focus:outline-none focus:border-yellow-500">${sanitizeHTML(review.memo)}</textarea>
                                 <button id="save-review-${shop.id}" class="mt-1 w-full bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-1 rounded text-xs transition-colors">メモを保存</button>
                             </div>` : ''}
                             ${isAdmin ? `<button id="edit-shop-${shop.id}" class="mt-2 w-full bg-brand-600 text-white font-bold py-1 rounded text-sm">編集する</button>` : ''}
@@ -798,7 +1054,7 @@
                     }
                 };
 
-            }, [localMap, visitedShops, favoriteShops, shopReviews, searchQuery, isAdmin, showOnlyUnvisited, visitFilter, showOpenNow, showCashlessOnly, walkingOrigin, walkingTime, darkMode]);
+            }, [localMap, selectedPrefecture, visitedShops, favoriteShops, shopReviews, searchQuery, isAdmin, showOnlyUnvisited, visitFilter, showOpenNow, showCashlessOnly, walkingOrigin, walkingTime]);
 
             const handleSaveData = async () => {
                 setIsSaving(true);
@@ -1005,6 +1261,114 @@
                         </div>
                     )}
 
+                    
+
+                    {showPolicyModal && (
+                        <div className="absolute inset-0 z-[2000] bg-black/50 backdrop-blur-sm flex items-center justify-center pointer-events-auto" onClick={() => setShowPolicyModal(false)}>
+                            <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-6 w-[480px] max-w-[90%] max-h-[85vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+                                <div className="flex justify-between items-center mb-4 border-b border-gray-100 dark:border-gray-700 pb-3">
+                                    <h2 className="text-lg font-black text-gray-800 dark:text-white flex items-center gap-2">
+                                        <span>ℹ️</span> サイト情報＆規約ポリシー
+                                    </h2>
+                                    <button onClick={() => setShowPolicyModal(false)} className="text-gray-400 hover:text-gray-600 font-bold text-lg">✕</button>
+                                </div>
+
+                                <div className="space-y-4 text-xs text-slate-600 dark:text-gray-300 leading-relaxed">
+                                    <div>
+                                        <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-1">🍔 GO BURGER について</h3>
+                                        <p>
+                                            GO BURGERは、日本全国のこだわりグルメバーガー・クラフトバーガー専門店を網羅した検索ガイドマップです。現在地周辺の探索、決済方法、営業時間での絞り込みや店舗の記録が可能です。
+                                        </p>
+                                    </div>
+
+                                    <div className="bg-slate-50 dark:bg-gray-900 p-3 rounded-xl space-y-1 border border-slate-200 dark:border-gray-700">
+                                        <h3 className="font-bold text-slate-900 dark:text-white text-xs">【お問い合わせ・店舗情報修正依頼】</h3>
+                                        <p>運営元：GO BURGER 編集事務局</p>
+                                        <p>メール：<a href="mailto:goburger.app.info@gmail.com" className="text-brand-600 font-bold hover:underline">goburger.app.info@gmail.com</a></p>
+                                        <p className="text-[10px] text-gray-400">※掲載内容の変更、削除リクエスト、新規掲載のご希望はお気軽にご連絡ください。</p>
+                                    </div>
+
+                                    <div>
+                                        <h3 className="font-bold text-slate-900 dark:text-white text-xs mb-1">1. 広告の配信（Google AdSense）について</h3>
+                                        <p>
+                                            当サイトでは第三者配信事業者（Google AdSense等）による広告サービスを利用しています。広告配信事業者はユーザーの興味に応じた広告を表示するため、Cookie（クッキー）を使用することがあります。詳細は「<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-brand-600 underline">Googleポリシーと規約</a>」をご覧ください。
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h3 className="font-bold text-slate-900 dark:text-white text-xs mb-1">2. 免責事項</h3>
+                                        <p>
+                                            当サイトに掲載している店舗情報（営業時間、所在地、決済方法等）は最新の注意を払って更新しておりますが、変更される場合があります。実際に訪問される際は各店舗の公式情報をご確認ください。
+                                        </p>
+                                    </div>
+
+                                    <div className="pt-2 text-center">
+                                        <button
+                                            onClick={() => setShowPolicyModal(false)}
+                                            className="bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-2 rounded-xl text-xs transition-colors"
+                                        >
+                                            閉じる
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {showBackupModal && (
+                        <div className="absolute inset-0 z-[2000] bg-black/50 backdrop-blur-sm flex items-center justify-center pointer-events-auto" onClick={() => { setShowBackupModal(false); setBackupStatus(null); }}>
+                            <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-6 w-[380px] max-w-[90%]" onClick={(e) => e.stopPropagation()}>
+                                <h2 className="text-xl font-black text-center mb-1 text-gray-800 dark:text-white">{"\ud83d\udcf1"} データ引継ぎ</h2>
+                                <p className="text-xs text-gray-500 dark:text-gray-400 text-center mb-4">機種変更や別の端末にデータを移行できます</p>
+                                
+                                <div className="space-y-3">
+                                    <div className="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-4 border border-blue-200 dark:border-blue-800">
+                                        <h3 className="font-bold text-sm text-blue-800 dark:text-blue-300 mb-2">{"\u2b07\ufe0f"} データを保存する</h3>
+                                        <p className="text-xs text-blue-600 dark:text-blue-400 mb-3">「行った店」「行きたい店」「レビュー」をファイルとして書き出します</p>
+                                        <button
+                                            onClick={handleExport}
+                                            className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2.5 rounded-lg transition-colors text-sm"
+                                        >
+                                            {"\ud83d\udcbe"} 引継ぎファイルをダウンロード
+                                        </button>
+                                    </div>
+
+                                    <div className="bg-green-50 dark:bg-green-900/30 rounded-xl p-4 border border-green-200 dark:border-green-800">
+                                        <h3 className="font-bold text-sm text-green-800 dark:text-green-300 mb-2">{"\u2b06\ufe0f"} データを復元する</h3>
+                                        <p className="text-xs text-green-600 dark:text-green-400 mb-3">保存した引継ぎファイルからデータを読み込みます</p>
+                                        <input
+                                            ref={fileInputRef}
+                                            type="file"
+                                            accept=".json"
+                                            onChange={handleImport}
+                                            className="hidden"
+                                            id="backup-file-input"
+                                        />
+                                        <button
+                                            onClick={() => fileInputRef.current?.click()}
+                                            className="w-full bg-green-500 hover:bg-green-400 text-white font-bold py-2.5 rounded-lg transition-colors text-sm"
+                                        >
+                                            {"\ud83d\udcc2"} ファイルを選んで復元
+                                        </button>
+                                    </div>
+
+                                    {backupStatus && (
+                                        <div className={`rounded-xl p-3 text-sm font-bold text-center ${backupStatus.type === 'success' ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300' : 'bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300'}`}>
+                                            {backupStatus.message}
+                                        </div>
+                                    )}
+
+                                    <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3 border border-amber-200 dark:border-amber-800">
+                                        <p className="text-[11px] text-amber-700 dark:text-amber-400 font-bold">{"\u26a0\ufe0f"} 注意</p>
+                                        <p className="text-[11px] text-amber-600 dark:text-amber-500">復元すると現在のデータは上書きされます。引継ぎファイルは安全な場所に保管してください。</p>
+                                    </div>
+                                </div>
+
+                                <button onClick={() => { setShowBackupModal(false); setBackupStatus(null); }} className="mt-4 w-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 font-bold py-2 rounded-xl transition-colors text-sm">閉じる</button>
+                            </div>
+                        </div>
+                    )}
+
                     <div className="absolute top-0 left-0 right-0 p-3 md:p-4 pointer-events-none z-[1000] flex flex-col gap-2">
                         <div className="flex w-full gap-2 pointer-events-auto shadow-xl rounded-xl bg-white dark:bg-gray-800 p-1 items-center transition-colors">
                             <div 
@@ -1021,6 +1385,16 @@
                                 <span className="hidden sm:inline">{rank.title}</span>
                                 <span className="sm:hidden">{visitedCount}</span>
                             </button>
+                            <select
+                                className="px-2 py-2 rounded-lg border-2 border-transparent focus:border-brand-500 outline-none font-bold text-stone-700 dark:text-gray-200 bg-slate-50 dark:bg-gray-700 focus:bg-white dark:focus:bg-gray-600 transition-colors"
+                                value={selectedPrefecture.name}
+                                onChange={(e) => {
+                                    const pref = PREFECTURES.find(p => p.name === e.target.value);
+                                    if (pref) setSelectedPrefecture(pref);
+                                }}
+                            >
+                                {PREFECTURES.map(p => <option key={p.name} value={p.name}>{p.name}</option>)}
+                            </select>
                             <input
                                 type="text"
                                 placeholder="店名を検索..."
@@ -1036,13 +1410,6 @@
                                 {menuOpen ? '✕' : '☰'}
                             </button>
                             <div className="hidden md:flex gap-2 items-center">
-                                <button
-                                    onClick={() => setDarkMode(!darkMode)}
-                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all ${darkMode ? 'bg-gray-600 text-yellow-300' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
-                                    title="ダークモード切替"
-                                >
-                                    {darkMode ? '🌙' : '☀️'}
-                                </button>
 
                                 <button
                                     onClick={() => setShowWalkingFilter(!showWalkingFilter)}
@@ -1076,17 +1443,25 @@
                                 >
                                     💳 キャッシュレス
                                 </button>
+                                <button
+                                    onClick={() => setShowBackupModal(true)}
+                                    className="px-3 py-2 rounded-lg font-bold text-xs transition-all bg-slate-100 text-slate-500 hover:bg-slate-200"
+                                    title="データ引継ぎ"
+                                >
+                                    📱 データ引継ぎ
+                                </button>
+                                <button
+                                    onClick={() => setShowPolicyModal(true)}
+                                    className="px-3 py-2 rounded-lg font-bold text-xs transition-all bg-slate-100 text-slate-500 hover:bg-slate-200"
+                                    title="規約・ポリシー"
+                                >
+                                    ℹ️ 規約
+                                </button>
                             </div>
                         </div>
 
                         {menuOpen && (
-                            <div className="md:hidden pointer-events-auto flex gap-2 flex-wrap bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-xl rounded-xl p-2 animate-[fadeIn_0.15s_ease-out]">
-                                <button
-                                    onClick={() => setDarkMode(!darkMode)}
-                                    className={`px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 ${darkMode ? 'bg-gray-600 text-yellow-300' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
-                                >
-                                    {darkMode ? '🌙 ダークモード' : '☀️ ライトモード'}
-                                </button>
+                            <div className="md:hidden pointer-events-auto flex gap-2 flex-wrap bg-white/95 backdrop-blur-sm shadow-xl rounded-xl p-2 animate-[fadeIn_0.15s_ease-out]">
 
                                 <button
                                     onClick={() => { setShowWalkingFilter(!showWalkingFilter); setMenuOpen(false); }}
@@ -1115,6 +1490,12 @@
                                     className={`px-3 py-2 rounded-lg font-bold text-xs transition-all ${showCashlessOnly ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
                                 >
                                     💳 キャッシュレス
+                                </button>
+                                <button
+                                    onClick={() => { setShowBackupModal(true); setMenuOpen(false); }}
+                                    className="px-3 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-1 bg-slate-100 text-slate-500 hover:bg-slate-200"
+                                >
+                                    📱 データ引継ぎ
                                 </button>
                             </div>
                         )}
@@ -1219,10 +1600,10 @@
                         </button>
                     </div>
 
-                    <div className="absolute bottom-0 left-0 right-0 z-[1000] pointer-events-auto bg-gray-100/95 dark:bg-gray-900/95 backdrop-blur-sm border-t border-gray-300 dark:border-gray-700 flex flex-col items-center justify-start shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] h-[65px] overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 z-[1000] pointer-events-auto bg-gray-100/95 backdrop-blur-sm border-t border-gray-300 flex flex-col items-center justify-start shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]" style={{ height: '65px', maxHeight: '65px', overflow: 'hidden' }}>
                         <div className="text-[10px] text-gray-500 font-bold tracking-widest leading-none py-1">スポンサーリンク</div>
                         <ins className="adsbygoogle"
-                             style={{ display: 'inline-block', width: '320px', height: '50px' }}
+                             style={{ display: 'inline-block', width: '320px', height: '50px', maxHeight: '50px', overflow: 'hidden' }}
                              data-ad-client="ca-pub-9509204113741918"
                              data-ad-slot="7838436451"></ins>
                     </div>
@@ -1231,18 +1612,7 @@
         }
 
         function App() {
-            const [selectedPrefecture] = useState(PREFECTURES.find(p => p.name === "東京都"));
-            const [darkMode, setDarkMode] = useState(() => localStorage.getItem('burger_dark') === 'true');
-
-            useEffect(() => {
-                if (darkMode) {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('burger_dark', 'true');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('burger_dark', 'false');
-                }
-            }, [darkMode]);
+            const [selectedPrefecture, setSelectedPrefecture] = useState(PREFECTURES.find(p => p.name === "東京都"));
 
             const [visitedShops, setVisitedShops] = useState(() => {
                 const saved = localStorage.getItem('burger_visited');
@@ -1263,14 +1633,13 @@
             };
 
             return (
-                <div className="h-full w-full bg-white dark:bg-gray-900 transition-colors">
+                <div className="h-full w-full bg-white">
                     <MapView
                         selectedPrefecture={selectedPrefecture}
+                        setSelectedPrefecture={setSelectedPrefecture}
                         onBack={() => { }}
                         visitedShops={visitedShops}
                         toggleVisited={toggleVisited}
-                        darkMode={darkMode}
-                        setDarkMode={setDarkMode}
                     />
                 </div>
             );
@@ -1285,12 +1654,11 @@
         // Populate the SEO directory for crawlers
         window.addEventListener('DOMContentLoaded', () => {
             const listEl = document.getElementById('shop-directory-list');
-            if (listEl && typeof FULL_TOKYO_SHOPS !== 'undefined') {
-                const html = FULL_TOKYO_SHOPS.map(shop => {
-                    // Escape basic HTML just in case
-                    const name = shop.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                    const address = shop.address.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                    const hours = shop.hours.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            if (listEl && typeof FULL_JAPAN_SHOPS !== 'undefined') {
+                const html = FULL_JAPAN_SHOPS.map(shop => {
+                    const name = sanitizeHTML(shop.name);
+                    const address = sanitizeHTML(shop.address);
+                    const hours = sanitizeHTML(shop.hours);
                     return `<div class="border-b border-gray-100 dark:border-gray-800 pb-2 mb-2">
                         <div class="font-bold text-brand-600 dark:text-brand-400">${name}</div>
                         <div class="text-xs text-gray-600 dark:text-gray-400">📍 ${address}</div>
