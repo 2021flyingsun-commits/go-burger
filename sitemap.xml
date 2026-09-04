@@ -2,55 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://go-burger.vercel.app/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://go-burger.vercel.app/privacy.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://go-burger.vercel.app/about.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://go-burger.vercel.app/terms.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://go-burger.vercel.app/guide/tokyo.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://go-burger.vercel.app/guide/kanagawa.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://go-burger.vercel.app/guide/kansai.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://go-burger.vercel.app/guide/hokkaido.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://go-burger.vercel.app/guide/kyushu-okinawa.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://go-burger.vercel.app/articles/smash-burger-guide.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://go-burger.vercel.app/articles/how-to-choose-gourmet-burger.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://go-burger.vercel.app/articles/wagyu-burger.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

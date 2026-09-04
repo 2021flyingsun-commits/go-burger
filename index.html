@@ -148,233 +148,277 @@
     <meta name="keywords" content="ハンバーガー,グルメバーガー,クラフトバーガー,ハンバーガーショップ,全国ハンバーガーマップ,GO BURGER">
 </head>
 
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden select-none">
-    <div id="root" class="h-[100dvh] w-full relative z-10 shadow-xl"></div>
-    
-    <div id="seo-content" class="bg-slate-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 px-6 py-16 w-full select-text flex flex-col items-center border-t border-slate-200 dark:border-gray-800">
-        <div class="max-w-4xl w-full space-y-12">
-            
-            <header class="text-center space-y-4">
-                <span class="inline-block bg-brand-100 text-brand-700 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">National Craft Burger Directory</span>
-                <h1 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight">GO BURGER - 全国グルメバーガー・クラフトバーガー専門ガイド</h1>
-                <p class="text-slate-600 dark:text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">
-                    日本全国1,000店舗以上のこだわりグルメバーガー・クラフトバーガー専門店を網羅。現在地検索、決済方法、営業時間フィルターで、今食べるべき究極の一皿へ案内します。
-                </p>
-            </header>
+<body class="bg-slate-50 text-slate-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans select-text">
 
-            <!-- Navigation Grid to Static Pages & Guides -->
-            <section class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
-                <h2 class="text-xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
-                    <span>📚</span> 特集ガイド＆公式ナビゲーション
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs md:text-sm">
-                    <a href="/guide/tokyo.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
-                        <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">🗼 東京バーガーガイド</span>
-                        <span class="text-slate-600 dark:text-gray-400 text-xs block">原宿・恵比寿・人形町・本郷の名店徹底解説</span>
-                    </a>
-                    <a href="/guide/kanagawa.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
-                        <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">⚓ 神奈川・横浜ガイド</span>
-                        <span class="text-slate-600 dark:text-gray-400 text-xs block">横須賀ネイビーバーガー＆みなとみらい</span>
-                    </a>
-                    <a href="/guide/kansai.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
-                        <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">🏯 関西バーガーガイド</span>
-                        <span class="text-slate-600 dark:text-gray-400 text-xs block">大阪・京都・神戸のブランド和牛バーガー</span>
-                    </a>
-                    <a href="/articles/smash-burger-guide.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
-                        <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">🔥 スマッシュバーガーとは？</span>
-                        <span class="text-slate-600 dark:text-gray-400 text-xs block">カリカリ食感と肉感の秘密を解説</span>
-                    </a>
-                    <a href="/articles/how-to-choose-gourmet-burger.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
-                        <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">📖 バーガーの選び方ガイド</span>
-                        <span class="text-slate-600 dark:text-gray-400 text-xs block">初心者向けおすすめ注文と食べ方のコツ</span>
-                    </a>
-                    <a href="/about.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
-                        <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">ℹ️ 当サイトについて</span>
-                        <span class="text-slate-600 dark:text-gray-400 text-xs block">運営者情報・お問い合わせ窓口</span>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Section: About -->
-            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
-                <h2 class="text-2xl font-black text-brand-600 dark:text-brand-400 flex items-center gap-2">
-                    <span>🍔</span> GO BURGER（ゴーバーガー）とは？
-                </h2>
-                <p class="leading-relaxed text-slate-700 dark:text-gray-300">
-                    GO BURGERは、大手ファストフードチェーンとは一線を画す、職人こだわりの「グルメバーガー」「クラフトバーガー」専門店に特化した日本最大級のロケーションガイドです。
-                    つなぎ無しの100%ビーフパティ、特製オリジナルバンズ、仕込みに何時間もかける秘伝ソースなど、店主の情熱が詰まった全国1,000店舗以上の情報をリアルタイムに探索できます。
-                </p>
-                <p class="leading-relaxed text-slate-700 dark:text-gray-300">
-                    現在地からの徒歩圏内検索機能や、電子マネー・クレジットカード対応の絞り込み、リアルタイム営業状態のチェック、「行った店・行きたい店」のマイリスト機能など、ハンバーガー愛好家のための利便性を追求しています。
-                </p>
-            </section>
-
-            <!-- Section: Guide to Gourmet Burgers -->
-            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-6">
-                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
-                    <span>📖</span> グルメバーガーの魅力と選び方ガイド
-                </h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-slate-50 dark:bg-gray-900 p-5 rounded-xl space-y-2">
-                        <h3 class="font-bold text-brand-600 dark:text-brand-400 text-lg">1. 塊肉から仕込む肉感パティ</h3>
-                        <p class="text-xs leading-relaxed text-slate-600 dark:text-gray-400">
-                            グルメバーガーの主役は肉。ステーキのように包丁で手切り（ハンドチョップ）した粗挽き肉や、鉄板で押し焼く「スマッシュスタイル」、和牛100%パティなど、噛むほどに肉汁が溢れる仕込みが特徴です。
-                        </p>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-gray-900 p-5 rounded-xl space-y-2">
-                        <h3 class="font-bold text-brand-600 dark:text-brand-400 text-lg">2. 具材を受け止める特製バンズ</h3>
-                        <p class="text-xs leading-relaxed text-slate-600 dark:text-gray-400">
-                            有名ベーカリー特注の酒種バンズや、リッチなブリオッシュ、香ばしいハード系バンズなど、肉汁とソースをしっかり吸い止める黄金バランスのパンが全体の一体感を生み出します。
-                        </p>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-gray-900 p-5 rounded-xl space-y-2">
-                        <h3 class="font-bold text-brand-600 dark:text-brand-400 text-lg">3. 独創的なソース＆トッピング</h3>
-                        <p class="text-xs leading-relaxed text-slate-600 dark:text-gray-400">
-                            自家製燻製ベーコン、濃厚チェダーやブルーチーズ、アボカド、自家製タルタルやスモーキーなBBQソースなど、シェフの個性が際立つトッピングの組み合わせも魅力です。
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section: Regional Cultures -->
-            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
-                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
-                    <span>🗾</span> 日本全国のクラフトバーガー文化
-                </h2>
-                <div class="space-y-4 text-sm text-slate-700 dark:text-gray-300 leading-relaxed">
-                    <p>
-                        <strong>関東（東京・横浜）:</strong> 日本のグルメバーガー発祥の地であり、原宿・恵比寿・人形町・本郷などを中心に世界基準の本格アメリカンダイナーや先進的バーガーショップが集結しています。
-                    </p>
-                    <p>
-                        <strong>関西・東海（大阪・京都・名古屋）:</strong> 飛騨牛や近江牛などのブランド和牛を贅沢に使ったプレミアムバーガーや、出汁や和素材を取り入れた独創的バーガーが盛り上がりを見せています。
-                    </p>
-                    <p>
-                        <strong>九州・沖縄・北海道:</strong> 米軍基地カルチャーから生まれた「佐世保バーガー」や沖縄のアメリカンスタイルバーガー、北海道の豊かな十勝牛や新鮮野菜を味わうご当地バーガーなど地域ごとの特色が豊かです。
-                    </p>
-                </div>
-            </section>
-
-            <!-- Section: Featured Famous Shops -->
-            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-6">
-                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
-                    <span>🏆</span> 編集部おすすめ！注目の名店ピックアップ
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                    <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-bold text-base text-slate-900 dark:text-white">THE GREAT BURGER</h3>
-                            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都渋谷区</span>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
-                            南原宿に佇む日本のグルメバーガー界のカリスマ。特製天然酵母バンズとジューシーな粗挽き肉、南カリフォルニアの空気感を再現したオールドアメリカンな空間が人々を惹きつけます。
-                        </p>
-                    </div>
-                    <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-bold text-base text-slate-900 dark:text-white">BROZERS' 人形町本店</h3>
-                            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都中央区</span>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
-                            2000年創業、赤を基調とした大人気アメリカンダイナー。名物「ロットバーガー」はベーコン、チーズ、エッグ、パインに特製BBQソースが絡み合う究極の一品。
-                        </p>
-                    </div>
-                    <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-bold text-base text-slate-900 dark:text-white">MUNCH'S BURGER SHACK</h3>
-                            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都港区</span>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
-                            塊肉を包丁で包丁叩きにしたつなぎ無しの100%USアンガスビーフパティ。まるで極上ステーキを食べているかのような力強い食感と肉汁が爆発します。
-                        </p>
-                    </div>
-                    <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-bold text-base text-slate-900 dark:text-white">Fire House</h3>
-                            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都文京区</span>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
-                            1996年創業の日本のグルメバーガー史を創ったレジェンド店。王道のアップルバーガーやモッツァレラバーガーなど、時代を超えて愛される洗練された味わい。
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section: Shop Directory -->
-            <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
-                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
-                    <span>📍</span> 日本全国のハンバーガーショップディレクトリ
-                </h2>
-                <p class="text-xs text-slate-500 dark:text-gray-400">※以下は当データベースに登録されている全国の店舗情報一覧です。</p>
-                <div id="shop-directory-list" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs max-h-[600px] overflow-y-auto pr-2">
-                    <!-- JavaScript will populate this -->
-                </div>
-            </section>
-
-            <!-- Section: Compliance & Policies -->
-            <section id="privacy-policy" class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-6">
-                <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
-                    <span>⚖️</span> プライバシーポリシー・免責事項・運営情報
-                </h2>
-
-                <div class="space-y-4 text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
-                    <div>
-                        <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">1. 広告の配信について（Google AdSense等）</h3>
-                        <p>
-                            当サイト（GO BURGER）では、第三者配信の広告サービス（Google AdSense）を利用しています。
-                            このような広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報「Cookie」(氏名、住所、メール アドレス、電話番号は含まれません) を使用することがあります。
-                            Cookieを無効にする設定およびGoogleアドセンスに関する詳細は「<a href="https://policies.google.com/technologies/ads" target="_blank" class="text-brand-600 hover:underline">Googleポリシーと規約</a>」をご確認ください。
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">2. アクセス解析ツールについて</h3>
-                        <p>
-                            当サイトでは、サービスの改善およびアクセス状況の把握のため、Cookieを使用したアクセス解析を行っています。トラフィックデータは匿名で収集されており、個人を特定するものではありません。
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">3. 免責事項</h3>
-                        <p>
-                            当サイトで提供している店舗情報（所在地、営業時間、定休日、決済方法等）は正確を期すよう努めておりますが、店舗側の都合により変更される場合があります。
-                            実際に訪問される際は、各店舗の公式SNSやWebサイト、または電話等で最新情報をご確認ください。当サイトの利用により生じた損害等について、運営者は一切の責任を負いかねます。
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">4. 著作権・掲載情報について</h3>
-                        <p>
-                            当サイトに掲載されているコンテンツ（文章、デザイン、プログラム）の無断転載・複製を禁止します。店舗情報の修正・削除のご依頼や、新規店舗の掲載リクエストがございましたら、下記のお問い合わせ窓口までご連絡ください。
-                        </p>
-                    </div>
-
-                    <div class="bg-slate-50 dark:bg-gray-900 p-4 rounded-xl space-y-1">
-                        <h3 class="font-bold text-slate-900 dark:text-white text-sm">【運営者情報・お問い合わせ窓口】</h3>
-                        <p>運営元：GO BURGER 編集事務局</p>
-                        <p>お問い合わせメールアドレス：<a href="mailto:goburger.app.info@gmail.com" class="text-brand-600 font-bold hover:underline">goburger.app.info@gmail.com</a></p>
-                        <p class="text-[11px] text-slate-500">※掲載内容のご指摘、不具合のご報告、取材・掲載依頼等はお気軽にご連絡ください。</p>
-                    </div>
-                </div>
-            </section>
-
-            <footer class="text-center text-xs text-slate-400 dark:text-gray-500 py-6 border-t border-slate-200 dark:border-gray-800 space-y-4">
-                <div class="flex justify-center flex-wrap gap-4 md:gap-6 font-medium text-slate-600 dark:text-gray-400">
-                    <a href="/" class="hover:underline">マップ検索</a>
-                    <a href="/guide/tokyo.html" class="hover:underline">東京バーガーガイド</a>
-                    <a href="/guide/kanagawa.html" class="hover:underline">神奈川バーガーガイド</a>
-                    <a href="/guide/kansai.html" class="hover:underline">関西バーガーガイド</a>
-                    <a href="/articles/smash-burger-guide.html" class="hover:underline">スマッシュバーガー解説</a>
-                    <a href="/articles/how-to-choose-gourmet-burger.html" class="hover:underline">バーガーの選び方</a>
-                    <a href="/about.html" class="hover:underline">運営者情報・お問い合わせ</a>
-                    <a href="/terms.html" class="hover:underline">利用規約</a>
-                    <a href="/privacy.html" class="hover:underline">プライバシーポリシー</a>
-                </div>
-                <p>&copy; 2026 GO BURGER. All Rights Reserved.</p>
-            </footer>
-
+    <!-- Top Navigation Header -->
+    <header class="bg-white dark:bg-gray-800 border-b border-slate-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 font-black text-xl text-slate-900 dark:text-white">
+                <span class="text-2xl">🍔</span>
+                <span class="tracking-tight">GO <span class="text-brand-600">BURGER</span></span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-5 text-xs md:text-sm font-bold text-slate-600 dark:text-gray-300">
+                <a href="#map-section" class="hover:text-brand-600 transition">マップ検索</a>
+                <a href="/guide/tokyo.html" class="hover:text-brand-600 transition">東京</a>
+                <a href="/guide/kanagawa.html" class="hover:text-brand-600 transition">神奈川</a>
+                <a href="/guide/kansai.html" class="hover:text-brand-600 transition">関西</a>
+                <a href="/guide/hokkaido.html" class="hover:text-brand-600 transition">北海道</a>
+                <a href="/guide/kyushu-okinawa.html" class="hover:text-brand-600 transition">九州・沖縄</a>
+                <a href="/articles/smash-burger-guide.html" class="hover:text-brand-600 transition">スマッシュ</a>
+                <a href="/about.html" class="hover:text-brand-600 transition">当サイトについて</a>
+            </nav>
+            <a href="#map-section" class="lg:hidden text-xs bg-brand-600 text-white font-bold px-3 py-1.5 rounded-lg shadow-sm">マップへ移動</a>
         </div>
-    </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-12 flex-grow">
+        
+        <!-- Hero Section -->
+        <header class="text-center space-y-4 pt-2">
+            <span class="inline-block bg-brand-100 text-brand-700 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">National Craft Burger Directory & Media</span>
+            <h1 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight">GO BURGER - 全国グルメバーガー・クラフトバーガー専門ガイド</h1>
+            <p class="text-slate-600 dark:text-gray-400 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
+                日本全国1,000店舗以上のこだわりグルメバーガー・クラフトバーガー専門店を網羅。現在地検索、決済方法、営業時間フィルターと豊富な地域別・テーマ別解説ガイド記事で、今食べるべき究極の一皿へ案内します。
+            </p>
+        </header>
+
+        <!-- Navigation Grid to Static Pages & Guides -->
+        <section class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
+            <h2 class="text-xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                <span>📚</span> 公式バーガーガイド＆特集記事
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs md:text-sm">
+                <a href="/guide/tokyo.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
+                    <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">🗼 東京バーガーガイド</span>
+                    <span class="text-slate-600 dark:text-gray-400 text-xs block">原宿・恵比寿・人形町・本郷の名店解説</span>
+                </a>
+                <a href="/guide/kanagawa.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
+                    <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">⚓ 神奈川・横浜ガイド</span>
+                    <span class="text-slate-600 dark:text-gray-400 text-xs block">横須賀ネイビーバーガー＆みなとみらい</span>
+                </a>
+                <a href="/guide/kansai.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
+                    <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">🏯 関西バーガーガイド</span>
+                    <span class="text-slate-600 dark:text-gray-400 text-xs block">大阪・京都・神戸のブランド和牛バーガー</span>
+                </a>
+                <a href="/guide/hokkaido.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
+                    <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">🐮 北海道バーガーガイド</span>
+                    <span class="text-slate-600 dark:text-gray-400 text-xs block">十勝牛100%パティ＆チーズ文化</span>
+                </a>
+                <a href="/guide/kyushu-okinawa.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
+                    <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">🌺 九州・沖縄ガイド</span>
+                    <span class="text-slate-600 dark:text-gray-400 text-xs block">佐世保バーガー＆アメリカンダイナー</span>
+                </a>
+                <a href="/articles/smash-burger-guide.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
+                    <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">🔥 スマッシュバーガー</span>
+                    <span class="text-slate-600 dark:text-gray-400 text-xs block">カリカリ食感と肉感の秘密を解説</span>
+                </a>
+                <a href="/articles/wagyu-burger.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
+                    <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">🥩 和牛バーガー特集</span>
+                    <span class="text-slate-600 dark:text-gray-400 text-xs block">黒毛和牛100%パティの至高の味わい</span>
+                </a>
+                <a href="/about.html" class="p-4 rounded-xl bg-slate-50 hover:bg-brand-50 dark:bg-gray-900 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-700 transition block space-y-1">
+                    <span class="font-bold text-brand-600 dark:text-brand-400 block text-base">ℹ️ 当サイトについて</span>
+                    <span class="text-slate-600 dark:text-gray-400 text-xs block">運営者情報・お問い合わせ窓口</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Interactive Map Section -->
+        <section id="map-section" class="space-y-3 pt-2">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+                    <span>🗺️</span> 全国クラフトバーガー リアルタイムマップ検索
+                </h2>
+                <span class="text-xs bg-brand-100 text-brand-700 font-bold px-3 py-1 rounded-full">現在地検索対応</span>
+            </div>
+            <div id="root" class="h-[520px] md:h-[600px] w-full relative z-10 shadow-md rounded-2xl overflow-hidden border border-slate-200 dark:border-gray-700"></div>
+        </section>
+
+        <!-- Section: About -->
+        <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
+            <h2 class="text-2xl font-black text-brand-600 dark:text-brand-400 flex items-center gap-2">
+                <span>🍔</span> GO BURGER（ゴーバーガー）とは？
+            </h2>
+            <p class="leading-relaxed text-slate-700 dark:text-gray-300">
+                GO BURGERは、大手ファストフードチェーンとは一線を画す、職人こだわりの「グルメバーガー」「クラフトバーガー」専門店に特化した日本最大級のロケーションガイドです。
+                つなぎ無しの100%ビーフパティ、特製オリジナルバンズ、仕込みに何時間もかける秘伝ソースなど、店主の情熱が詰まった全国1,000店舗以上の情報をリアルタイムに探索できます。
+            </p>
+            <p class="leading-relaxed text-slate-700 dark:text-gray-300">
+                現在地からの徒歩圏内検索機能や、電子マネー・クレジットカード対応の絞り込み、リアルタイム営業状態のチェック、「行った店・行きたい店」のマイリスト機能など、ハンバーガー愛好家のための利便性を追求しています。
+            </p>
+        </section>
+
+        <!-- Section: Guide to Gourmet Burgers -->
+        <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-6">
+            <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                <span>📖</span> グルメバーガーの魅力と選び方ガイド
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 dark:bg-gray-900 p-5 rounded-xl space-y-2">
+                    <h3 class="font-bold text-brand-600 dark:text-brand-400 text-lg">1. 塊肉から仕込む肉感パティ</h3>
+                    <p class="text-xs leading-relaxed text-slate-600 dark:text-gray-400">
+                        グルメバーガーの主役は肉。ステーキのように包丁で手切り（ハンドチョップ）した粗挽き肉や、鉄板で押し焼く「スマッシュスタイル」、和牛100%パティなど、噛むほどに肉汁が溢れる仕込みが特徴です。
+                    </p>
+                </div>
+                <div class="bg-slate-50 dark:bg-gray-900 p-5 rounded-xl space-y-2">
+                    <h3 class="font-bold text-brand-600 dark:text-brand-400 text-lg">2. 具材を受け止める特製バンズ</h3>
+                    <p class="text-xs leading-relaxed text-slate-600 dark:text-gray-400">
+                        有名ベーカリー特注の酒種バンズや、リッチなブリオッシュ、香ばしいハード系バンズなど、肉汁とソースをしっかり吸い止める黄金バランスのパンが全体の一体感を生み出します。
+                    </p>
+                </div>
+                <div class="bg-slate-50 dark:bg-gray-900 p-5 rounded-xl space-y-2">
+                    <h3 class="font-bold text-brand-600 dark:text-brand-400 text-lg">3. 独創的なソース＆トッピング</h3>
+                    <p class="text-xs leading-relaxed text-slate-600 dark:text-gray-400">
+                        自家製燻製ベーコン、濃厚チェダーやブルーチーズ、アボカド、自家製タルタルやスモーキーなBBQソースなど、シェフの個性が際立つトッピングの組み合わせも魅力です。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Regional Cultures -->
+        <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
+            <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                <span>🗾</span> 日本全国のクラフトバーガー文化
+            </h2>
+            <div class="space-y-4 text-sm text-slate-700 dark:text-gray-300 leading-relaxed">
+                <p>
+                    <strong>関東（東京・横浜）:</strong> 日本のグルメバーガー発祥の地であり、原宿・恵比寿・人形町・本郷などを中心に世界基準の本格アメリカンダイナーや先進的バーガーショップが集結しています。
+                </p>
+                <p>
+                    <strong>関西・東海（大阪・京都・名古屋）:</strong> 飛騨牛や近江牛などのブランド和牛を贅沢に使ったプレミアムバーガーや、出汁や和素材を取り入れた独創的バーガーが盛り上がりを見せています。
+                </p>
+                <p>
+                    <strong>九州・沖縄・北海道:</strong> 米軍基地カルチャーから生まれた「佐世保バーガー」や沖縄のアメリカンスタイルバーガー、北海道の豊かな十勝牛や新鮮野菜を味わうご当地バーガーなど地域ごとの特色が豊かです。
+                </p>
+            </div>
+        </section>
+
+        <!-- Section: Featured Famous Shops -->
+        <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-6">
+            <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                <span>🏆</span> 編集部おすすめ！注目の名店ピックアップ
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-base text-slate-900 dark:text-white">THE GREAT BURGER</h3>
+                        <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都渋谷区</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                        南原宿に佇む日本のグルメバーガー界のカリスマ。特製天然酵母バンズとジューシーな粗挽き肉、南カリフォルニアの空気感を再現したオールドアメリカンな空間が人々を惹きつけます。
+                    </p>
+                </div>
+                <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-base text-slate-900 dark:text-white">BROZERS' 人形町本店</h3>
+                        <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都中央区</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                        2000年創業、赤を基調とした大人気アメリカンダイナー。名物「ロットバーガー」はベーコン、チーズ、エッグ、パインに特製BBQソースが絡み合う究極の一品。
+                    </p>
+                </div>
+                <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-base text-slate-900 dark:text-white">MUNCH'S BURGER SHACK</h3>
+                        <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都港区</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                        塊肉を包丁で包丁叩きにしたつなぎ無しの100%USアンガスビーフパティ。まるで極上ステーキを食べているかのような力強い食感と肉汁が爆発します。
+                    </p>
+                </div>
+                <div class="border border-slate-200 dark:border-gray-700 p-5 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-base text-slate-900 dark:text-white">Fire House</h3>
+                        <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded">東京都文京区</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                        1996年創業の日本のグルメバーガー史を創ったレジェンド店。王道のアップルバーガーやモッツァレラバーガーなど、時代を超えて愛される洗練された味わい。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Shop Directory -->
+        <section class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-4">
+            <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                <span>📍</span> 日本全国のハンバーガーショップディレクトリ
+            </h2>
+            <p class="text-xs text-slate-500 dark:text-gray-400">※以下は当データベースに登録されている全国の店舗情報一覧です。</p>
+            <div id="shop-directory-list" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs max-h-[600px] overflow-y-auto pr-2">
+                <!-- JavaScript will populate this -->
+            </div>
+        </section>
+
+        <!-- Section: Compliance & Policies -->
+        <section id="privacy-policy" class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-gray-700 space-y-6">
+            <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-700 pb-3 flex items-center gap-2">
+                <span>⚖️</span> プライバシーポリシー・免責事項・運営情報
+            </h2>
+
+            <div class="space-y-4 text-xs text-slate-600 dark:text-gray-400 leading-relaxed">
+                <div>
+                    <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">1. 広告の配信について（Google AdSense等）</h3>
+                    <p>
+                        当サイト（GO BURGER）では、第三者配信の広告サービス（Google AdSense）を利用しています。
+                        このような広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報「Cookie」(氏名、住所、メール アドレス、電話番号は含まれません) を使用することがあります。
+                        Cookieを無効にする設定およびGoogleアドセンスに関する詳細は「<a href="https://policies.google.com/technologies/ads" target="_blank" class="text-brand-600 hover:underline">Googleポリシーと規約</a>」をご確認ください。
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">2. アクセス解析ツールについて</h3>
+                    <p>
+                        当サイトでは、サービスの改善およびアクセス状況の把握のため、Cookieを使用したアクセス解析を行っています。トラフィックデータは匿名で収集されており、個人を特定するものではありません。
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">3. 免責事項</h3>
+                    <p>
+                        当サイトで提供している店舗情報（所在地、営業時間、定休日、決済方法等）は正確を期すよう努めておりますが、店舗側の都合により変更される場合があります。
+                        実際に訪問される際は、各店舗の公式SNSやWebサイト、または電話等で最新情報をご確認ください。当サイトの利用により生じた損害等について、運営者は一切の責任を負いかねます。
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm mb-1">4. 著作権・掲載情報について</h3>
+                    <p>
+                        当サイトに掲載されているコンテンツ（文章、デザイン、プログラム）の無断転載・複製を禁止します。店舗情報の修正・削除のご依頼や、新規店舗の掲載リクエストがございましたら、下記のお問い合わせ窓口までご連絡ください。
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-gray-900 p-4 rounded-xl space-y-1">
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">【運営者情報・お問い合わせ窓口】</h3>
+                    <p>運営元：GO BURGER 編集事務局</p>
+                    <p>お問い合わせメールアドレス：<a href="mailto:goburger.app.info@gmail.com" class="text-brand-600 font-bold hover:underline">goburger.app.info@gmail.com</a></p>
+                    <p class="text-[11px] text-slate-500">※掲載内容のご指摘、不具合のご報告、取材・掲載依頼等はお気軽にご連絡ください。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-slate-200 dark:border-gray-700 py-8 text-center text-xs text-slate-500 dark:text-gray-400">
+        <div class="max-w-5xl mx-auto px-4 space-y-4">
+            <div class="flex justify-center flex-wrap gap-4 md:gap-6 font-medium text-slate-600 dark:text-gray-400">
+                <a href="/" class="hover:underline">トップページ</a>
+                <a href="/guide/tokyo.html" class="hover:underline">東京バーガーガイド</a>
+                <a href="/guide/kanagawa.html" class="hover:underline">神奈川バーガーガイド</a>
+                <a href="/guide/kansai.html" class="hover:underline">関西バーガーガイド</a>
+                <a href="/guide/hokkaido.html" class="hover:underline">北海道バーガーガイド</a>
+                <a href="/guide/kyushu-okinawa.html" class="hover:underline">九州・沖縄ガイド</a>
+                <a href="/articles/smash-burger-guide.html" class="hover:underline">スマッシュバーガー解説</a>
+                <a href="/articles/wagyu-burger.html" class="hover:underline">和牛バーガー特集</a>
+                <a href="/about.html" class="hover:underline">運営者情報・お問い合わせ</a>
+                <a href="/terms.html" class="hover:underline">利用規約</a>
+                <a href="/privacy.html" class="hover:underline">プライバシーポリシー</a>
+            </div>
+            <p>&copy; 2026 GO BURGER. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script type="text/babel">
         const { useState, useEffect, useRef, useMemo } = React;
